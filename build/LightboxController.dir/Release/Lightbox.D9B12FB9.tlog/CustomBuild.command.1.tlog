@@ -1,0 +1,20 @@
+^C:\USERS\MATTH\ONEDRIVE\DOCUMENTS\PERSONAL PROJECTS\LIGHTBOXCONTROLLER\QML\QML.QRC
+setlocal
+C:\Qt\5.15.2\msvc2019_64\bin\rcc.exe --name qml --output "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/qrc_qml.cpp" "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/qml/qml.qrc"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\MATTH\ONEDRIVE\DOCUMENTS\PERSONAL PROJECTS\LIGHTBOXCONTROLLER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController" "-BC:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build" --check-stamp-file "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

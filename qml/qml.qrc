@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Main.qml</file>
+        <file>InspectorPanel.qml</file>
+        <file>DiscoverDialog.qml</file>
+    </qresource>
+</RCC>

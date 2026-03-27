@@ -1,0 +1,612 @@
+QFactoryLoader::QFactoryLoader() checking directory path "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms" ...
+QFactoryLoader::QFactoryLoader() looking at "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+    "MetaData": {
+        "Keys": [
+            "windows"
+        ]
+    },
+    "archreq": 0,
+    "className": "QWindowsIntegrationPlugin",
+    "debug": false,
+    "version": 331520
+}
+
+
+Got keys from plugin meta data ("windows")
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll"
+QFactoryLoader::QFactoryLoader() checking directory path "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platformthemes" ...
+QFactoryLoader::QFactoryLoader() checking directory path "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles" ...
+QFactoryLoader::QFactoryLoader() looking at "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QStyleFactoryInterface",
+    "MetaData": {
+        "Keys": [
+            "windowsvista"
+        ]
+    },
+    "archreq": 0,
+    "className": "QWindowsVistaStylePlugin",
+    "debug": false,
+    "version": 331520
+}
+
+
+Got keys from plugin meta data ("windowsvista")
+QFactoryLoader::QFactoryLoader() looking at "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyled.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyled.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QStyleFactoryInterface",
+    "MetaData": {
+        "Keys": [
+            "windowsvista"
+        ]
+    },
+    "archreq": 1,
+    "className": "QWindowsVistaStylePlugin",
+    "debug": true,
+    "version": 331520
+}
+
+
+"The plugin 'C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyled.dll' uses incompatible Qt library. (Cannot mix debug and release libraries.)" 
+         not a plugin
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll"
+QQmlImportDatabase::addImportPath: "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml"
+QQmlImportDatabase::addImportPath: "qrc:/qt-project.org/imports"
+QQmlImportDatabase::addImportPath: "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release"
+Loaded 0 bulbs from config
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qtquick2plugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuick2Plugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.2"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qtquick2plugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick.Controls" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qtquickcontrols2plugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuickControls2Plugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Controls.2"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qtquickcontrols2plugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Controls" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2"
+Trying... "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin"
+Trying... "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuickControls2MaterialStylePlugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Controls.2.Material"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin.dll"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Controls.Material" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick.Layouts" 1.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qquicklayoutsplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlEngineExtensionInterface",
+    "archreq": 0,
+    "className": "QtQuickLayoutsPlugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Layouts"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qquicklayoutsplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Layouts" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "Qt3D.Core" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/quick3dcoreplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "Qt3DQuick3DCorePlugin",
+    "debug": false,
+    "uri": [
+        "Qt3D.Core"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/quick3dcoreplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "Qt3D.Core" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "Qt3D.Render" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render/quick3drenderplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "Qt3DQuick3DRenderPlugin",
+    "debug": false,
+    "uri": [
+        "Qt3D.Render"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render/quick3drenderplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "Qt3D.Render" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "Qt3D.Input" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Input/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Input/quick3dinputplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "Qt3DQuick3DInputPlugin",
+    "debug": false,
+    "uri": [
+        "Qt3D.Input"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Input/quick3dinputplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "Qt3D.Input" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Input"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "Qt3D.Extras" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Extras/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Extras/quick3dextrasplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "Qt3DQuick3DExtrasPlugin",
+    "debug": false,
+    "uri": [
+        "Qt3D.Extras"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Extras/quick3dextrasplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "Qt3D.Extras" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Extras"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick.Scene3D" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Scene3D/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Scene3D/qtquickscene3dplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuickScene3DPlugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Scene3D"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Scene3D/qtquickscene3dplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Scene3D" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Scene3D"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "LightboxController" 1.0 as ""
+QQmlImports(qrc:/Main.qml)::resolveType: "RenderSettings" => "Qt3DRender::QRenderSettings" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Repeater" => "QQuickRepeater" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "ForwardRenderer" => "Qt3DExtras::QForwardRenderer" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "MouseArea" => "QQuickMouseArea" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "ToolBar" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qtquicktemplates2plugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuickTemplates2Plugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Templates.2"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qtquicktemplates2plugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Templates" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::resolveType: "T.ToolBar" => "QQuickToolBar" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::resolveType: "ElevationEffect" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::resolveType: "BoxShadow" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::resolveType: "RectangularGlow" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml)::resolveType: "ShaderEffect" => "QQuickShaderEffect" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml)::resolveType: "ShaderEffectSource" => "QQuickShaderEffectSource" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/RectangularGlow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BoxShadow.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::resolveType: "ShaderEffect" => "QQuickShaderEffect" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::resolveType: "Material" => "QQuickMaterialStyle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ToolBar.qml)::addImplicitImport
+QQmlImports(qrc:/Main.qml)::resolveType: "SplitView" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::addLibraryImport: "QtQuick" 2.13 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::addLibraryImport: "QtQuick.Templates" 2.13 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::addLibraryImport: "QtQuick.Controls" 2.13 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::addLibraryImport: "QtQuick.Controls.impl" 2.13 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.13 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::resolveType: "T.SplitView" => "QQuickSplitView" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::resolveType: "Behavior" => "QQuickBehavior" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::resolveType: "NumberAnimation" => "QQuickNumberAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SplitView.qml)::addImplicitImport
+QQmlImports(qrc:/Main.qml)::resolveType: "Transform" => "Qt3DCore::QTransform" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(qrc:/Main.qml)::addImplicitImport
+QQmlImports(qrc:/Main.qml)::resolveType: "InspectorPanel" => "" QUrl("qrc:/InspectorPanel.qml") TYPE/URL
+QQmlImports(qrc:/InspectorPanel.qml)::addLibraryImport: "QtQuick" 2.15 as ""
+QQmlImports(qrc:/InspectorPanel.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(qrc:/InspectorPanel.qml)::addLibraryImport: "QtQuick.Controls" 2.15 as ""
+QQmlImports(qrc:/InspectorPanel.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(qrc:/InspectorPanel.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.15 as ""
+QQmlImports(qrc:/InspectorPanel.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(qrc:/InspectorPanel.qml)::addLibraryImport: "QtQuick.Layouts" 1.15 as ""
+QQmlImports(qrc:/InspectorPanel.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qmldir"
+QQmlImports(qrc:/InspectorPanel.qml)::addLibraryImport: "QtQuick" 2.0 as "QmlInternals"
+QQmlImports(qrc:/InspectorPanel.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "SpinBox" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::resolveType: "T.SpinBox" => "QQuickSpinBox" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::resolveType: "Ripple" => "QQuickMaterialRipple" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::resolveType: "CursorDelegate" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::resolveType: "Connections" => "QQmlConnections" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::resolveType: "Timer" => "QQmlTimer" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::resolveType: "TextInput" => "QQuickTextInput" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::resolveType: "IntValidator" => "QQuickIntValidator" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SpinBox.qml)::addImplicitImport
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "TextField" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::addLibraryImport: "QtQuick.Controls" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::addLibraryImport: "QtQuick.Controls.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::resolveType: "T.TextField" => "QQuickTextField" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::resolveType: "CursorDelegate" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/CursorDelegate.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::resolveType: "PlaceholderText" => "QQuickPlaceholderText" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::resolveType: "TextInput" => "QQuickTextInput" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml)::resolveType: "Text" => "QQuickText" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Material" => "QQuickMaterialStyle" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "GridLayout" => "QQuickGridLayout" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Row" => "QQuickRow" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "ScrollView" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::addLibraryImport: "QtQuick.Controls" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::addLibraryImport: "QtQuick.Controls.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::resolveType: "T.ScrollView" => "QQuickScrollView" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::resolveType: "ScrollBar" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "State" => "QQuickState" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "NumberAnimation" => "QQuickNumberAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "Transition" => "QQuickTransition" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "SequentialAnimation" => "QQuickSequentialAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "PropertyAction" => "QQuickPropertyAction" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "T.ScrollBar" => "QQuickScrollBar" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::resolveType: "PauseAnimation" => "QQuickPauseAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::resolveType: "ScrollBar" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/ScrollView.qml)::resolveType: "ScrollBar" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ScrollBar.qml") TYPE/URL
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Button" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::addLibraryImport: "QtQuick.Controls" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::addLibraryImport: "QtQuick.Controls.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::resolveType: "Ripple" => "QQuickMaterialRipple" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::resolveType: "T.Button" => "QQuickButton" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::resolveType: "Material" => "QQuickMaterialStyle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::resolveType: "PaddedRectangle" => "QQuickPaddedRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::resolveType: "IconLabel" => "QQuickIconLabel" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::resolveType: "ElevationEffect" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml)::addImplicitImport
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Repeater" => "QQuickRepeater" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "ColumnLayout" => "QQuickColumnLayout" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "MouseArea" => "QQuickMouseArea" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Label" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::resolveType: "T.Label" => "QQuickLabel" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml)::addImplicitImport
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Switch" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::resolveType: "T.Switch" => "QQuickSwitch" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::resolveType: "Text" => "QQuickText" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::resolveType: "SwitchIndicator" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::resolveType: "Behavior" => "QQuickBehavior" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::resolveType: "Material" => "QQuickMaterialStyle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::resolveType: "SmoothedAnimation" => "QQuickSmoothedAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::resolveType: "ElevationEffect" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SwitchIndicator.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::resolveType: "Ripple" => "QQuickMaterialRipple" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::resolveType: "Text" => "QQuickText" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Switch.qml)::resolveType: "Text" => "QQuickText" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Behavior" => "QQuickBehavior" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "QmlInternals.Component" => "QQmlComponent" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "NumberAnimation" => "QQuickNumberAnimation" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Layout" => "QQuickLayout" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Slider" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::addLibraryImport: "QtQuick.Controls.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::resolveType: "T.Slider" => "QQuickSlider" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::resolveType: "SliderHandle" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::resolveType: "Behavior" => "QQuickBehavior" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::resolveType: "NumberAnimation" => "QQuickNumberAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::resolveType: "Ripple" => "QQuickMaterialRipple" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/SliderHandle.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Slider.qml)::addImplicitImport
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(qrc:/InspectorPanel.qml)::addImplicitImport
+QQmlImports(qrc:/InspectorPanel.qml)::resolveType: "Text" => "QQuickText" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "PointLight" => "Qt3DRender::QPointLight" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "DiscoverDialog" => "" QUrl("qrc:/DiscoverDialog.qml") TYPE/URL
+QQmlImports(qrc:/DiscoverDialog.qml)::addLibraryImport: "QtQuick" 2.15 as ""
+QQmlImports(qrc:/DiscoverDialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(qrc:/DiscoverDialog.qml)::addLibraryImport: "QtQuick.Controls" 2.15 as ""
+QQmlImports(qrc:/DiscoverDialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(qrc:/DiscoverDialog.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.15 as ""
+QQmlImports(qrc:/DiscoverDialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(qrc:/DiscoverDialog.qml)::addLibraryImport: "QtQuick.Layouts" 1.15 as ""
+QQmlImports(qrc:/DiscoverDialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qmldir"
+QQmlImports(qrc:/DiscoverDialog.qml)::addLibraryImport: "QtQuick" 2.0 as "QmlInternals"
+QQmlImports(qrc:/DiscoverDialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "RowLayout" => "QQuickRowLayout" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "BusyIndicator" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::resolveType: "T.BusyIndicator" => "QQuickBusyIndicator" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::resolveType: "BusyIndicatorImpl" => "QQuickMaterialBusyIndicator" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::resolveType: "Behavior" => "QQuickBehavior" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::resolveType: "OpacityAnimator" => "QQuickOpacityAnimator" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/BusyIndicator.qml)::addImplicitImport
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Button" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml") TYPE/URL
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "ListView" => "QQuickListView" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Layout" => "QQuickLayout" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "QmlInternals.Component" => "QQmlComponent" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Material" => "QQuickMaterialStyle" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Label" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml") TYPE/URL
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Dialog" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::addLibraryImport: "QtQuick.Controls" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::addLibraryImport: "QtQuick.Controls.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Behavior" => "QQuickBehavior" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "T.Dialog" => "QQuickDialog" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "T.Overlay" => "QQuickOverlay" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Label" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Material" => "QQuickMaterialStyle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Transition" => "QQuickTransition" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "NumberAnimation" => "QQuickNumberAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "PaddedRectangle" => "QQuickPaddedRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "ElevationEffect" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ElevationEffect.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "DialogButtonBox" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::addLibraryImport: "QtQuick.Controls" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::addLibraryImport: "QtQuick.Controls.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::addLibraryImport: "QtQuick.Controls.Material.impl" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "Button" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "T.DialogButtonBox" => "QQuickDialogButtonBox" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "ListView" => "QQuickListView" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "Material" => "QQuickMaterialStyle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "PaddedRectangle" => "QQuickPaddedRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "ListView" => "QQuickListView" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "Flickable" => "QQuickFlickable" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/DialogButtonBox.qml)::resolveType: "ListView" => "QQuickListView" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::addImplicitImport
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Easing" => "QQmlEasingValueType" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Easing" => "QQmlEasingValueType" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Easing" => "QQmlEasingValueType" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Easing" => "QQmlEasingValueType" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml)::resolveType: "Label" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml") TYPE/URL
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "ColumnLayout" => "QQuickColumnLayout" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(qrc:/DiscoverDialog.qml)::addImplicitImport
+QQmlImports(qrc:/DiscoverDialog.qml)::resolveType: "Text" => "QQuickText" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Scene3D" => "Qt3DRender::Scene3DItem" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "ObjectPicker" => "Qt3DRender::QObjectPicker" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Dialog" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Dialog.qml") TYPE/URL
+QQmlImports(qrc:/Main.qml)::resolveType: "RowLayout" => "QQuickRowLayout" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "PhongAlphaMaterial" => "Qt3DExtras::QPhongAlphaMaterial" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "ColumnLayout" => "QQuickColumnLayout" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Entity" => "Qt3DCore::QEntity" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "TextField" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/TextField.qml") TYPE/URL
+QQmlImports(qrc:/Main.qml)::resolveType: "Label" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Label.qml") TYPE/URL
+QQmlImports(qrc:/Main.qml)::resolveType: "Camera" => "Qt3DRender::QCamera" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "PlaneMesh" => "Qt3DExtras::QPlaneMesh" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "NodeInstantiator" => "Qt3DCore::Quick::Quick3DNodeInstantiator" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "ApplicationWindow" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml") TYPE/URL
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::addLibraryImport: "QtQuick" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::addLibraryImport: "QtQuick.Window" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Window.2/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Window.2/windowplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlEngineExtensionInterface",
+    "archreq": 0,
+    "className": "QtQuick2WindowPlugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Window.2"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Window.2/windowplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Window" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Window.2"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::addLibraryImport: "QtQuick.Templates" 2.12 as "T"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Templates.2/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.12 as ""
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::resolveType: "T.ApplicationWindow" => "QQuickApplicationWindow" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::resolveType: "Rectangle" => "QQuickRectangle" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::resolveType: "Behavior" => "QQuickBehavior" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::resolveType: "NumberAnimation" => "QQuickNumberAnimation" TYPE
+QQmlImports(file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/ApplicationWindow.qml)::addImplicitImport
+QQmlImports(qrc:/Main.qml)::resolveType: "PhongMaterial" => "Qt3DExtras::QPhongMaterial" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "TorusMesh" => "Qt3DExtras::QTorusMesh" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Item" => "QQuickItem" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Layout" => "QQuickLayout" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "CuboidMesh" => "Qt3DExtras::QCuboidMesh" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Button" => "" QUrl("file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/Button.qml") TYPE/URL
+QQmlImports(qrc:/Main.qml)::resolveType: "OrbitCameraController" => "Qt3DExtras::QOrbitCameraController" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Material" => "Qt3DRender::QMaterial" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "Row" => "QQuickRow" TYPE
+QQmlImports(qrc:/Main.qml)::resolveType: "InputSettings" => "Qt3DInput::QInputSettings" TYPE
+QQmlApplicationEngine failed to load component
+qrc:/Main.qml:30:9: Non-existent attached object
+Config saved to: "C:/Users/matth/AppData/Roaming/LightboxController/LightboxController/config.json"
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll" 
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll" 
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/quick3dcoreplugin.dll" 
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Extras/quick3dextrasplugin.dll" 
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Input/quick3dinputplugin.dll" 
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render/quick3drenderplugin.dll" 

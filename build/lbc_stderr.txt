@@ -1,0 +1,171 @@
+QFactoryLoader::QFactoryLoader() checking directory path "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms" ...
+QFactoryLoader::QFactoryLoader() looking at "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+    "MetaData": {
+        "Keys": [
+            "windows"
+        ]
+    },
+    "archreq": 0,
+    "className": "QWindowsIntegrationPlugin",
+    "debug": false,
+    "version": 331520
+}
+
+
+Got keys from plugin meta data ("windows")
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll"
+QFactoryLoader::QFactoryLoader() checking directory path "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platformthemes" ...
+QFactoryLoader::QFactoryLoader() checking directory path "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles" ...
+QFactoryLoader::QFactoryLoader() looking at "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QStyleFactoryInterface",
+    "MetaData": {
+        "Keys": [
+            "windowsvista"
+        ]
+    },
+    "archreq": 0,
+    "className": "QWindowsVistaStylePlugin",
+    "debug": false,
+    "version": 331520
+}
+
+
+Got keys from plugin meta data ("windowsvista")
+QFactoryLoader::QFactoryLoader() looking at "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyled.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyled.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QStyleFactoryInterface",
+    "MetaData": {
+        "Keys": [
+            "windowsvista"
+        ]
+    },
+    "archreq": 1,
+    "className": "QWindowsVistaStylePlugin",
+    "debug": true,
+    "version": 331520
+}
+
+
+"The plugin 'C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyled.dll' uses incompatible Qt library. (Cannot mix debug and release libraries.)" 
+         not a plugin
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll"
+QQmlImportDatabase::addImportPath: "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml"
+QQmlImportDatabase::addImportPath: "qrc:/qt-project.org/imports"
+QQmlImportDatabase::addImportPath: "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release"
+Loaded 0 bulbs from config
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qtquick2plugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuick2Plugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.2"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2/qtquick2plugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick.2"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick.Controls" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qtquickcontrols2plugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuickControls2Plugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Controls.2"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/qtquickcontrols2plugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Controls" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2"
+Trying... "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin"
+Trying... "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin.dll"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "QtQuickControls2MaterialStylePlugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Controls.2.Material"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qtquickcontrols2materialstyleplugin.dll"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick.Controls.Material" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material/qmldir"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Controls.Material" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Controls.2/Material"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "QtQuick.Layouts" 1.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qquicklayoutsplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlEngineExtensionInterface",
+    "archreq": 0,
+    "className": "QtQuickLayoutsPlugin",
+    "debug": false,
+    "uri": [
+        "QtQuick.Layouts"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts/qquicklayoutsplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "QtQuick.Layouts" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Layouts"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "Qt3D.Core" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/quick3dcoreplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "Qt3DQuick3DCorePlugin",
+    "debug": false,
+    "uri": [
+        "Qt3D.Core"
+    ],
+    "version": 331520
+}
+
+
+loaded library "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/quick3dcoreplugin.dll"
+QQmlImportDatabase::registerPluginTypes: "Qt3D.Core" from "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core"
+QQmlImports(qrc:/Main.qml)::addLibraryImport: "Qt3D.Render" 2.15 as ""
+QQmlImports(qrc:/Main.qml)::importExtension: loaded "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render/qmldir"
+Found metadata in lib C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render/quick3drenderplugin.dll, metadata=
+{
+    "IID": "org.qt-project.Qt.QQmlExtensionInterface/1.0",
+    "archreq": 0,
+    "className": "Qt3DQuick3DRenderPlugin",
+    "debug": false,
+    "uri": [
+        "Qt3D.Render"
+    ],
+    "version": 331520
+}
+
+
+Cannot load library C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\Release\qml\Qt3D\Render\quick3drenderplugin.dll: The specified module could not be found.
+QLibraryPrivate::loadPlugin failed on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Render/quick3drenderplugin.dll" : "Cannot load library C:\\Users\\matth\\OneDrive\\Documents\\Personal Projects\\LightboxController\\build\\Release\\qml\\Qt3D\\Render\\quick3drenderplugin.dll: The specified module could not be found."
+QQmlApplicationEngine failed to load component
+qrc:/Main.qml:6:1: plugin cannot be loaded for module "Qt3D.Render": Cannot load library C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\Release\qml\Qt3D\Render\quick3drenderplugin.dll: The specified module could not be found.
+Config saved to: "C:/Users/matth/AppData/Roaming/LightboxController/LightboxController/config.json"
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/styles/qwindowsvistastyle.dll" 
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/platforms/qwindows.dll" 
+QLibraryPrivate::unload succeeded on "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/Qt3D/Core/quick3dcoreplugin.dll" 

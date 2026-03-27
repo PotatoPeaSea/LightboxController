@@ -1,0 +1,3 @@
+C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/CMakeFiles/LightboxController.dir
+C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/CMakeFiles/ZERO_CHECK.dir
