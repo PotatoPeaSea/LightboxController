@@ -90,6 +90,21 @@ graph TD
     J --> K
 ```
 
+#### Grid Index Mapping
+To ensure consistent assignment, samples are indexed in a **row-major** order within each half. For a standard 12-sample configuration (6 per side), the mapping follows a 2x3 grid:
+
+| | Left Side (L) | | | Right Side (R) | |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **L1** | | **L2** | **R1** | | **R2** |
+| **L3** | | **L4** | **R3** | | **R4** |
+| **L5** | | **L6** | **R5** | | **R6** |
+
+- **L1 / R1**: Maps to the Top-Left corner of the respective half.
+- **L2 / R2**: Maps to the Top-Right corner.
+- **L6 / R6**: Maps to the Bottom-Right corner.
+
+Indices are then dispatched to bulbs on that side based on their physical **Depth** sorting. For instance, `L1` (the top-left visual area) will be assigned to the deepest background bulb on the left side.
+
 ### 2. High-Performance Core Sampling
 Instead of expensively averaging millions of pixels per frame, the engine employs a "center 10% core" heuristic for each generated chunk.
 
