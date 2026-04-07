@@ -63,3 +63,58 @@ run.bat
 LightboxController communicates directly with smart bulbs using the local network **LEDENET protocol**:
 - **Discovery**: A UDP broadcast is sent on Port 48899 (`HF-A11ASSISTHREAD`). Responsive bulbs reply with their IP, MAC, and Model.
 - **Control**: Once added, LightboxController opens a direct TCP connection to the bulb on Port 5577. It sends control instructions as raw byte-arrays (e.g. 9-byte commands mapping Color, Warm White, Cool White, and operation mode), terminating with a checksum. This allows it to instantly adjust device state without reliance on external servers.
+
+## Video Pattern Sampling Algorithm
+
+LightboxController features a custom **Spatial Video Pattern Engine** that dynamically extracts ambient lighting sequences from video files matching your physical bulb setup.
+
+### 1. Spatial Frame Slicing
+To ensure the lighting aligns with the spatial reality of your room, the video frame is bisected into **Left** and **Right** halves. Based on the selected `Sample Count`, the algorithm distributes the sampling points proportionately across the two halves (e.g., a 5-sample setup allocates 3 chunks to the left and 2 to the right).
+
+```mermaid
+graph TD
+    A[Raw Video Frame] --> B(Bisect Frame)
+    B --> C[Left Half]
+    B --> D[Right Half]
+    
+    C --> E[Calculate Grid Cols/Rows<br>for N/2 Samples]
+    D --> F[Calculate Grid Cols/Rows<br>for N/2 Samples]
+    
+    E --> G[Extract Center 10% Core]
+    F --> H[Extract Center 10% Core]
+    
+    G --> I[Average ~25 Stride Pixels]
+    H --> J[Average ~25 Stride Pixels]
+    
+    I --> K((Color Array))
+    J --> K
+```
+
+### 2. High-Performance Core Sampling
+Instead of expensively averaging millions of pixels per frame, the engine employs a "center 10% core" heuristic for each generated chunk.
+
+- **Bounding Box Calculation**: The spatial center of each chunk is found. A bounding box equivalent to 10% of the chunk's total area is computed to avoid edge letterboxing.
+- **Strided Pixel Averaging**: Within this inner core, a grid is established using uniform strides to guarantee ~25 distinct sample points.
+- **Result**: These pixels are averaged to represent the dominant RGB color of that chunk, drastically reducing CPU overhead while accurately capturing the focal lighting of that screen region. The extractor algorithm is also throttled to evaluate frames precisely at 5fps.
+
+### 3. Spatial Bulb Assignment
+Once the color array for a frame is extracted natively, the system must dispatch it to the appropriate physical bulbs in real-time.
+
+The engine inspects the metadata mathematically assigned to every bulb in the `Target Bulbs` list:
+- **Left/Right Isolation**: Bulbs explicitly flagged as "Left" or "Right" receive color data only originating from the respective half of the video.
+- **Depth Sorting**: Crucially, bulbs are sorted by their **Depth** property (Z-axis depth from the viewport) prior to assignment. Visual color samples map gracefully from the "deepest" background bulb to the nearest front-facing bulb on that side.
+
+```mermaid
+sequenceDiagram
+    participant Engine as Engine (Extracted Colors)
+    participant Group as Target Group
+    participant Room as Physical Bulbs
+    
+    Engine->>Group: Dispatch Array of Colors
+    Note over Group: Split target bulbs into<br>Left List & Right List
+    Note over Group: Sort each list by Bulb Depth (A -> Z)
+    Group-->>Room: Assign Left Color 0 -> Left Bulb (Deepest)
+    Group-->>Room: Assign Left Color 1 -> Left Bulb (Nearest)
+    Group-->>Room: Assign Right Color 0 -> Right Bulb (Deepest)
+    Note over Room: Low-latency TCP packet dispatch
+```

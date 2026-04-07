@@ -54,6 +54,8 @@ QVariant BulbManager::data(const QModelIndex& index, int role) const
         case ConnectedRole: return bulb->isConnected();
         case SelectedRole: return bulb->isSelected();
         case DisplayColorRole: return bulb->displayColor();
+        case IsLeftRole: return bulb->isLeft();
+        case DepthRole: return bulb->depth();
         case BulbObjectRole: return QVariant::fromValue(const_cast<Bulb*>(bulb));
         default: return QVariant();
     }
@@ -104,6 +106,8 @@ QHash<int, QByteArray> BulbManager::roleNames() const
         {ConnectedRole, "connected"},
         {SelectedRole, "selected"},
         {DisplayColorRole, "displayColor"},
+        {IsLeftRole, "isLeft"},
+        {DepthRole, "depth"},
         {BulbObjectRole, "bulbObject"},
     };
 }
@@ -211,6 +215,32 @@ void BulbManager::addBulb(const QString& ip, const QString& mac, const QString& 
 void BulbManager::addBulbManual(const QString& ip)
 {
     addBulb(ip, QString("manual_%1").arg(ip), "Manual");
+}
+
+
+void BulbManager::selectAllBulbs()
+{
+    if (m_bulbs.isEmpty()) return;
+    
+    bool changed = false;
+    for (int i = 0; i < m_bulbs.size(); ++i) {
+        if (!m_bulbs[i]->isSelected()) {
+            m_bulbs[i]->setSelected(true);
+            changed = true;
+        }
+    }
+    
+    // We can just keep the last selected bulb or leave m_selectedBulb as is,
+    // but selecting all typically just affects bulk operations.
+    // Let's set it to the first bulb if none was selected, to populate the inspector.
+    if (!m_selectedBulb && !m_bulbs.isEmpty()) {
+        m_selectedBulb = m_bulbs.first();
+        emit selectedBulbChanged();
+    }
+
+    if (changed) {
+        emit dataChanged(index(0), index(m_bulbs.size() - 1), {SelectedRole});
+    }
 }
 
 void BulbManager::removeBulb(int index)

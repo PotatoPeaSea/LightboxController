@@ -26,6 +26,11 @@ class Bulb : public QObject
     Q_PROPERTY(int coolWhite READ coolWhite WRITE setCoolWhite NOTIFY whiteChanged)
     Q_PROPERTY(QColor displayColor READ displayColor NOTIFY colorChanged)
 
+    // Pattern Deployment
+    Q_PROPERTY(bool isLeft READ isLeft WRITE setIsLeft NOTIFY isLeftChanged)
+    Q_PROPERTY(int depth READ depth WRITE setDepth NOTIFY depthChanged)
+
+
     // 3D Position
     Q_PROPERTY(float posX READ posX WRITE setPosX NOTIFY positionChanged)
     Q_PROPERTY(float posY READ posY WRITE setPosY NOTIFY positionChanged)
@@ -59,6 +64,10 @@ public:
     bool isSelected() const { return m_selected; }
     QColor displayColor() const;
 
+    bool isLeft() const { return m_isLeft; }
+    int depth() const { return m_depth; }
+
+
     // Setters
     void setIp(const QString& ip);
     void setMac(const QString& mac);
@@ -74,6 +83,9 @@ public:
     void setPosY(float y);
     void setPosZ(float z);
     void setSelected(bool selected);
+    void setIsLeft(bool isLeft);
+    void setDepth(int depth);
+
 
     // Commands — called from QML or BulbManager
     Q_INVOKABLE void turnOn();
@@ -100,7 +112,10 @@ signals:
     void positionChanged();
     void connectionChanged();
     void selectedChanged();
+    void isLeftChanged();
+    void depthChanged();
     void error(const QString& message);
+
 
 private slots:
     void onProtocolConnected();
@@ -132,4 +147,8 @@ private:
     float m_posZ = 0.0f;
 
     bool m_selected = false;
+
+    // Pattern properties
+    bool m_isLeft = true;
+    int m_depth = 1;
 };

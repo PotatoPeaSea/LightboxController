@@ -41,7 +41,8 @@ class VideoPatternEngine : public QAbstractVideoSurface
     // Playback state
     Q_PROPERTY(bool playing READ isPlaying NOTIFY playStateChanged)
     Q_PROPERTY(bool paused READ isPaused NOTIFY playStateChanged)
-    Q_PROPERTY(int playbackPositionMs READ playbackPositionMs NOTIFY playbackPositionChanged)
+    Q_PROPERTY(int playbackPositionMs READ playbackPositionMs WRITE setPlaybackPositionMs NOTIFY playbackPositionChanged)
+    Q_PROPERTY(qreal playbackSpeed READ playbackSpeed WRITE setPlaybackSpeed NOTIFY playbackSpeedChanged)
 
     // Live output
     Q_PROPERTY(QVariantList currentColors READ currentColors NOTIFY currentColorsChanged)
@@ -71,6 +72,7 @@ public:
     int patternDurationMs() const;
     int patternFrameCount() const;
     int playbackPositionMs() const;
+    qreal playbackSpeed() const;
     QVariantList currentColors() const;
     int targetBulbCount() const;
     QString statusMessage() const;
@@ -79,6 +81,8 @@ public:
     // ─── Property setters ─────────────────────────────
     void setSampleCount(int count);
     void setLooping(bool loop);
+    void setPlaybackSpeed(qreal speed);
+    void setPlaybackPositionMs(int ms);
 
     // ─── Commands (Q_INVOKABLE for QML) ───────────────
     Q_INVOKABLE void loadVideo(const QString& url);
@@ -102,6 +106,7 @@ signals:
     void playStateChanged();
     void loopingChanged();
     void playbackPositionChanged();
+    void playbackSpeedChanged();
     void currentColorsChanged();
     void targetBulbsChanged();
     void extractionComplete(int frameCount);
@@ -134,16 +139,20 @@ private:
     // Extraction storage
     QVector<PatternFrame> m_patternFrames;
     qint64 m_videoDurationMs = 0;
+    qint64 m_lastExtractedTimestampMs = -1;
 
     // Playback
     QTimer* m_playbackTimer = nullptr;
     QElapsedTimer m_playbackClock;
     qint64 m_playbackOffsetMs = 0;
+    qreal m_playbackSpeed = 1.0;
     int m_currentFrameIndex = 0;
     QVariantList m_currentColors;
 
-    // Target bulbs sorted by Z ascending (farthest first)
+    // Target bulbs
     QList<Bulb*> m_targetBulbs;
+    QList<Bulb*> m_leftBulbs;
+    QList<Bulb*> m_rightBulbs;
 
     QString m_statusMessage;
 };

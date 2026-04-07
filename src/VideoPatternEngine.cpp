@@ -67,6 +67,13 @@ bool VideoPatternEngine::present(const QVideoFrame& frame)
     if (!m_extracting || !frame.isValid())
         return false;
 
+    // Throttle extraction to 5fps (every 200ms)
+    qint64 currentPosMs = m_player->position();
+    if (m_lastExtractedTimestampMs != -1 && (currentPosMs - m_lastExtractedTimestampMs) < 200) {
+        return true; // we "handled" it but didn't extract
+    }
+    m_lastExtractedTimestampMs = currentPosMs;
+
     QVector<QColor> colors = sampleFrame(frame);
     if (colors.isEmpty())
         return false;
@@ -110,6 +117,7 @@ bool VideoPatternEngine::isPatternReady() const { return m_patternReady; }
 bool VideoPatternEngine::isPlaying() const { return m_playing; }
 bool VideoPatternEngine::isPaused() const { return m_paused; }
 bool VideoPatternEngine::isLooping() const { return m_looping; }
+qreal VideoPatternEngine::playbackSpeed() const { return m_playbackSpeed; }
 
 qreal VideoPatternEngine::extractionProgress() const
 {
@@ -132,7 +140,7 @@ int VideoPatternEngine::playbackPositionMs() const
 {
     if (!m_playing) return 0;
     if (m_paused) return static_cast<int>(m_playbackOffsetMs);
-    return static_cast<int>(m_playbackOffsetMs + m_playbackClock.elapsed());
+    return static_cast<int>(m_playbackOffsetMs + (m_playbackClock.elapsed() * m_playbackSpeed));
 }
 
 QVariantList VideoPatternEngine::currentColors() const { return m_currentColors; }
@@ -159,6 +167,49 @@ void VideoPatternEngine::setLooping(bool loop)
         emit loopingChanged();
     }
 }
+
+void VideoPatternEngine::setPlaybackSpeed(qreal speed)
+{
+    // Clamp speed to a reasonable range
+    speed = qBound(0.1, speed, 10.0);
+    if (!qFuzzyCompare(m_playbackSpeed, speed)) {
+        // If currently playing, bake the elapsed time at the old speed into the offset
+        if (m_playing && !m_paused) {
+            m_playbackOffsetMs += static_cast<qint64>(m_playbackClock.elapsed() * m_playbackSpeed);
+            m_playbackClock.restart();
+        }
+        m_playbackSpeed = speed;
+        emit playbackSpeedChanged();
+    }
+}
+
+void VideoPatternEngine::setPlaybackPositionMs(int ms)
+{
+    if (!m_patternReady || m_patternFrames.isEmpty()) return;
+
+    ms = qBound(0, ms, patternDurationMs());
+
+    m_playbackOffsetMs = ms;
+    if (m_playing && !m_paused) {
+        m_playbackClock.restart();
+    }
+
+    int frameIndex = 0;
+    while (frameIndex + 1 < m_patternFrames.size()
+           && m_patternFrames[frameIndex + 1].timestampMs <= ms) {
+        ++frameIndex;
+    }
+
+    if (frameIndex != m_currentFrameIndex) {
+        m_currentFrameIndex = frameIndex;
+        const auto& colors = m_patternFrames[frameIndex].colors;
+        updateCurrentColors(colors);
+        dispatchColors(colors);
+    }
+
+    emit playbackPositionChanged();
+}
+
 
 // ═══════════════════════════════════════════════════════════
 //  Commands
@@ -202,6 +253,7 @@ void VideoPatternEngine::extractPattern()
     m_patternReady = false;
     m_extracting = true;
     m_currentColors.clear();
+    m_lastExtractedTimestampMs = -1;
 
     emit extractingChanged();
     emit patternReadyChanged();
@@ -255,7 +307,7 @@ void VideoPatternEngine::pause()
 {
     if (m_playing && !m_paused) {
         m_paused = true;
-        m_playbackOffsetMs += m_playbackClock.elapsed();
+        m_playbackOffsetMs += static_cast<qint64>(m_playbackClock.elapsed() * m_playbackSpeed);
         m_playbackTimer->stop();
         emit playStateChanged();
         setStatus("Paused at " + QString::number(m_playbackOffsetMs / 1000.0, 'f', 1) + "s");
@@ -279,23 +331,39 @@ void VideoPatternEngine::stop()
 void VideoPatternEngine::setTargetBulbs(QVariantList bulbs)
 {
     m_targetBulbs.clear();
+    m_leftBulbs.clear();
+    m_rightBulbs.clear();
     for (const auto& v : bulbs) {
         Bulb* b = qobject_cast<Bulb*>(v.value<QObject*>());
-        if (b) m_targetBulbs.append(b);
+        if (b) {
+            m_targetBulbs.append(b);
+            if (b->isLeft()) {
+                m_leftBulbs.append(b);
+            } else {
+                m_rightBulbs.append(b);
+            }
+        }
     }
 
-    // Sort by Z ascending – index 0 = smallest Z = farthest from camera
-    std::sort(m_targetBulbs.begin(), m_targetBulbs.end(),
-              [](Bulb* a, Bulb* b) { return a->posZ() < b->posZ(); });
+    // Sort by depth ascending
+    std::sort(m_leftBulbs.begin(), m_leftBulbs.end(),
+              [](Bulb* a, Bulb* b) { return a->depth() < b->depth(); });
+    std::sort(m_rightBulbs.begin(), m_rightBulbs.end(),
+              [](Bulb* a, Bulb* b) { return a->depth() < b->depth(); });
 
     emit targetBulbsChanged();
-    setStatus(QString("%1 bulb(s) assigned, sorted by Z").arg(m_targetBulbs.size()));
-    qDebug() << "[Pattern] Target bulbs:" << m_targetBulbs.size();
+    setStatus(QString("%1 bulb(s) assigned (Left: %2, Right: %3)")
+              .arg(m_targetBulbs.size())
+              .arg(m_leftBulbs.size())
+              .arg(m_rightBulbs.size()));
+    qDebug() << "[Pattern] Target bulbs:" << m_targetBulbs.size() << "Left:" << m_leftBulbs.size() << "Right:" << m_rightBulbs.size();
 }
 
 void VideoPatternEngine::clearTargetBulbs()
 {
     m_targetBulbs.clear();
+    m_leftBulbs.clear();
+    m_rightBulbs.clear();
     emit targetBulbsChanged();
 }
 
@@ -380,7 +448,7 @@ void VideoPatternEngine::onPlaybackTick()
     if (!m_playing || m_paused || m_patternFrames.isEmpty())
         return;
 
-    qint64 elapsedMs = m_playbackOffsetMs + m_playbackClock.elapsed();
+    qint64 elapsedMs = m_playbackOffsetMs + static_cast<qint64>(m_playbackClock.elapsed() * m_playbackSpeed);
     int duration = patternDurationMs();
 
     if (duration <= 0) { stop(); return; }
@@ -453,13 +521,64 @@ QVector<QColor> VideoPatternEngine::sampleFrame(const QVideoFrame& frame)
 
     // Zero-copy image wrapper
     QImage img(f.bits(), w, h, f.bytesPerLine(), imgFmt);
-    int cx = w / 2;
 
-    for (int i = 0; i < m_sampleCount; ++i) {
-        int y = static_cast<int>(h * (i + 0.5) / m_sampleCount);
-        y = qBound(0, y, h - 1);
-        colors.append(img.pixelColor(cx, y));
-    }
+    int leftCount = std::ceil(m_sampleCount / 2.0);
+    int rightCount = std::floor(m_sampleCount / 2.0);
+
+    auto extractGridAverage = [&](int startX, int endX, int count, int totalHeight) {
+        if (count <= 0) return;
+        int cols = std::ceil(std::sqrt(count));
+        int rows = std::ceil(static_cast<float>(count) / cols);
+
+        int cellWidth = (endX - startX) / cols;
+        int cellHeight = totalHeight / rows;
+
+        int chunksExtracted = 0;
+        for (int row = 0; row < rows; ++row) {
+            for (int col = 0; col < cols; ++col) {
+                if (chunksExtracted >= count) break;
+
+                int chunkCx = startX + col * cellWidth + cellWidth / 2;
+                int chunkCy = row * cellHeight + cellHeight / 2;
+
+                // Center 10% of area -> scale width and height by sqrt(0.1) ~= 0.316
+                int coreWidth = std::max(1, static_cast<int>(cellWidth * 0.316));
+                int coreHeight = std::max(1, static_cast<int>(cellHeight * 0.316));
+
+                int cxStart = chunkCx - coreWidth / 2;
+                int cxEnd = chunkCx + coreWidth / 2;
+                int cyStart = chunkCy - coreHeight / 2;
+                int cyEnd = chunkCy + coreHeight / 2;
+
+                int strideX = std::max(1, coreWidth / 5);
+                int strideY = std::max(1, coreHeight / 5);
+
+                long rSum = 0, gSum = 0, bSum = 0;
+                int samplePoints = 0;
+
+                for (int y = cyStart; y < cyEnd; y += strideY) {
+                    for (int x = cxStart; x < cxEnd; x += strideX) {
+                        QColor c = img.pixelColor(x, y);
+                        rSum += c.red();
+                        gSum += c.green();
+                        bSum += c.blue();
+                        samplePoints++;
+                    }
+                }
+
+                if (samplePoints > 0) {
+                    colors.append(QColor(rSum / samplePoints, gSum / samplePoints, bSum / samplePoints));
+                } else {
+                    colors.append(QColor(0, 0, 0));
+                }
+                chunksExtracted++;
+            }
+        }
+    };
+
+    int midX = w / 2;
+    extractGridAverage(0, midX, leftCount, h);
+    extractGridAverage(midX, w, rightCount, h);
 
     f.unmap();
     return colors;
@@ -471,16 +590,25 @@ QVector<QColor> VideoPatternEngine::sampleFrame(const QVideoFrame& frame)
 
 void VideoPatternEngine::dispatchColors(const QVector<QColor>& colors)
 {
-    if (m_targetBulbs.isEmpty() || colors.isEmpty())
+    if (colors.isEmpty())
         return;
 
-    // colors[0] = top of frame  → targetBulbs[0] = smallest-Z (farthest)
-    // colors[N-1] = bottom      → targetBulbs[N-1] = largest-Z  (nearest)
-    int count = qMin(colors.size(), m_targetBulbs.size());
+    int leftCount = std::ceil(m_sampleCount / 2.0);
+    int rightCount = std::floor(m_sampleCount / 2.0);
 
-    for (int i = 0; i < count; ++i) {
+    int leftLimit = qMin(leftCount, static_cast<int>(colors.size()));
+    int rightLimit = qMin(rightCount, static_cast<int>(colors.size()) - leftLimit);
+
+    int lBulbs = qMin(leftLimit, static_cast<int>(m_leftBulbs.size()));
+    for (int i = 0; i < lBulbs; ++i) {
         const QColor& c = colors[i];
-        m_targetBulbs[i]->setColor(c.red(), c.green(), c.blue());
+        m_leftBulbs[i]->setColor(c.red(), c.green(), c.blue());
+    }
+
+    int rBulbs = qMin(rightLimit, static_cast<int>(m_rightBulbs.size()));
+    for (int i = 0; i < rBulbs; ++i) {
+        const QColor& c = colors[leftCount + i];
+        m_rightBulbs[i]->setColor(c.red(), c.green(), c.blue());
     }
 }
 

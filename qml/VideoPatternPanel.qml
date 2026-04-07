@@ -123,6 +123,8 @@ Rectangle {
                 }
             }
 
+
+
             Rectangle { Layout.fillWidth: true; height: 1; color: "#0f3460" }
 
             // ═══ Extraction ═══════════════════════════
@@ -263,11 +265,58 @@ Rectangle {
 
                 Label {
                     visible: patternEngine.patternReady
-                    text: (patternEngine.playbackPositionMs / 1000.0).toFixed(1) + " / "
-                          + (patternEngine.patternDurationMs / 1000.0).toFixed(1) + "s"
+                    text: (patternEngine.playbackPositionMs / 1000.0).toFixed(1) + "s"
                     color: "#aaa"
                     font.pixelSize: 11
+                }
+
+                Slider {
+                    id: scrubSlider
+                    visible: patternEngine.patternReady
                     Layout.fillWidth: true
+                    from: 0
+                    to: patternEngine.patternDurationMs > 0 ? patternEngine.patternDurationMs : 1
+                    value: patternEngine.playbackPositionMs
+                    
+                    // Break the binding while dragging so the 33ms timer doesn't snap it back
+                    Binding on value {
+                        when: !scrubSlider.pressed
+                        value: patternEngine.playbackPositionMs
+                    }
+                    
+                    onMoved: {
+                        patternEngine.playbackPositionMs = value
+                    }
+                }
+
+                Label {
+                    visible: patternEngine.patternReady
+                    text: (patternEngine.patternDurationMs / 1000.0).toFixed(1) + "s"
+                    color: "#aaa"
+                    font.pixelSize: 11
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 8
+
+                Label { text: "Speed:"; color: "#aaa"; font.pixelSize: 12; Layout.preferredWidth: 40 }
+                Slider {
+                    id: speedSlider
+                    from: 0.1
+                    to: 5.0
+                    stepSize: 0.1
+                    value: patternEngine.playbackSpeed !== undefined ? patternEngine.playbackSpeed : 1.0
+                    onValueChanged: patternEngine.playbackSpeed = value
+                    Layout.fillWidth: true
+                }
+                Label {
+                    text: speedSlider.value.toFixed(1) + "x"
+                    color: "#e0e0e0"
+                    font.pixelSize: 11
+                    Layout.preferredWidth: 30
+                    horizontalAlignment: Text.AlignRight
                 }
             }
 

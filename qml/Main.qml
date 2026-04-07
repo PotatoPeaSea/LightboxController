@@ -92,14 +92,20 @@ ApplicationWindow {
 
     // ─── Main Content ─────────────────────────────────────
 
-    RowLayout {
+    // ─── Keyboard Shortcuts ───────────────────────────────
+    Shortcut {
+        sequence: "Ctrl+A"
+        onActivated: bulbManager.selectAllBulbs()
+    }
+
+    SplitView {
         anchors.fill: parent
-        spacing: 0
 
         // ─── Bulb List Sidebar ────────────────────────
         Rectangle {
-            Layout.preferredWidth: 200
-            Layout.fillHeight: true
+            SplitView.preferredWidth: 200
+            SplitView.minimumWidth: 150
+            SplitView.maximumWidth: 300
             color: "#111133"
 
             ColumnLayout {
@@ -129,12 +135,13 @@ ApplicationWindow {
                     spacing: 4
 
                     delegate: Rectangle {
+                        property var bulbObj: bulbManager.bulbAt(index)
                         width: bulbListView.width
                         height: 56
                         radius: 6
-                        color: (model.selected !== undefined && model.selected) ? "#2a2a5e" : (bulbItemMa.containsMouse ? "#1e1e4a" : "#16213e")
-                        border.color: (model.selected !== undefined && model.selected) ? "#e94560" : "transparent"
-                        border.width: (model.selected !== undefined && model.selected) ? 2 : 0
+                        color: (bulbObj && bulbObj.selected) ? "#2a2a5e" : (bulbItemMa.containsMouse ? "#1e1e4a" : "#16213e")
+                        border.color: (bulbObj && bulbObj.selected) ? "#e94560" : "transparent"
+                        border.width: (bulbObj && bulbObj.selected) ? 2 : 0
 
                         MouseArea {
                             id: bulbItemMa
@@ -152,8 +159,8 @@ ApplicationWindow {
                             // Color indicator
                             Rectangle {
                                 width: 12; height: 12; radius: 6
-                                color: model.displayColor !== undefined ? model.displayColor : "#333"
-                                border.color: Qt.lighter(model.displayColor !== undefined ? model.displayColor : "#333", 1.3)
+                                color: (bulbObj && bulbObj.displayColor) ? bulbObj.displayColor : "#333"
+                                border.color: Qt.lighter((bulbObj && bulbObj.displayColor) ? bulbObj.displayColor : "#333", 1.3)
                                 border.width: 1
                             }
 
@@ -162,16 +169,16 @@ ApplicationWindow {
                                 Layout.fillWidth: true
 
                                 Label {
-                                    text: model.label !== undefined ? model.label : ""
-                                    color: (model.selected !== undefined && model.selected) ? "#e94560" : "#e0e0e0"
+                                    text: bulbObj ? (bulbObj.label + " " + (bulbObj.isLeft ? "[L" : "[R") + bulbObj.depth + "]") : "Bulb"
+                                    color: (bulbObj && bulbObj.selected) ? "#e94560" : "#ffffff"
                                     font.pixelSize: 13
-                                    font.bold: model.selected !== undefined ? model.selected : false
+                                    font.bold: bulbObj ? bulbObj.selected : false
                                     elide: Text.ElideRight
                                     Layout.fillWidth: true
                                 }
                                 Label {
-                                    text: model.ip !== undefined ? model.ip : ""
-                                    color: "#666"
+                                    text: bulbObj ? bulbObj.ip : "Unknown IP"
+                                    color: "#ffffff"
                                     font.pixelSize: 10
                                     elide: Text.ElideRight
                                     Layout.fillWidth: true
@@ -181,7 +188,7 @@ ApplicationWindow {
                             // Connection dot
                             Rectangle {
                                 width: 8; height: 8; radius: 4
-                                color: (model.connected !== undefined && model.connected) ? "#4caf50" : "#f44336"
+                                color: (bulbObj && bulbObj.connected) ? "#4caf50" : "#f44336"
                             }
                         }
                     }
@@ -201,8 +208,7 @@ ApplicationWindow {
 
         // ─── 3D Viewport ──────────────────────────────
         Item {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            SplitView.fillWidth: true
 
             Rectangle {
                 anchors.fill: parent
@@ -423,10 +429,9 @@ ApplicationWindow {
         // ─── Video Pattern Panel (toggleable) ─────────
         Rectangle {
             visible: videoPatternVisible
-            Layout.preferredWidth: 280
-            Layout.minimumWidth: 240
-            Layout.maximumWidth: 350
-            Layout.fillHeight: true
+            SplitView.preferredWidth: 280
+            SplitView.minimumWidth: 240
+            SplitView.maximumWidth: 500
             color: "#16213e"
             border.color: "#0f3460"
             border.width: 1
@@ -440,10 +445,9 @@ ApplicationWindow {
         // ─── Pattern Library Panel (toggleable) ───────
         Rectangle {
             visible: patternLibraryVisible
-            Layout.preferredWidth: 260
-            Layout.minimumWidth: 220
-            Layout.maximumWidth: 320
-            Layout.fillHeight: true
+            SplitView.preferredWidth: 260
+            SplitView.minimumWidth: 220
+            SplitView.maximumWidth: 500
             color: "#16213e"
             border.color: "#0f3460"
             border.width: 1
@@ -456,10 +460,9 @@ ApplicationWindow {
 
         // ─── Inspector Panel ──────────────────────────
         Rectangle {
-            Layout.preferredWidth: 320
-            Layout.minimumWidth: 280
-            Layout.maximumWidth: 450
-            Layout.fillHeight: true
+            SplitView.preferredWidth: 320
+            SplitView.minimumWidth: 280
+            SplitView.maximumWidth: 550
             color: "#16213e"
 
             InspectorPanel {

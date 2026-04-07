@@ -51,11 +51,14 @@ ScrollView {
                 id: labelField
                 Layout.fillWidth: true
                 text: inspectorRoot.bulb ? inspectorRoot.bulb.label : ""
-                color: "#e0e0e0"
+                color: "black"
                 onTextEdited: {
                     if (inspectorRoot.bulb) {
                         inspectorRoot.bulb.label = text
                     }
+                }
+                onEditingFinished: {
+                    bulbManager.saveConfig()
                 }
             }
 
@@ -223,6 +226,47 @@ ScrollView {
 
                         scale: parent.children[0].containsMouse ? 1.15 : 1.0
                         Behavior on scale { NumberAnimation { duration: 100 } }
+                    }
+                }
+            }
+
+            Rectangle { Layout.fillWidth: true; height: 1; color: "#0f3460" }
+
+            // ─── Pattern Properties ───────────────────────────
+
+            Label { text: "PATTERN DEPLOYMENT"; color: "#888"; font.pixelSize: 10; font.bold: true }
+
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 12
+
+                Label { text: "Side:"; color: "#aaa"; font.pixelSize: 12 }
+                Switch {
+                    id: sideSwitch
+                    text: checked ? "Left" : "Right"
+                    checked: inspectorRoot.bulb ? inspectorRoot.bulb.isLeft : true
+                    onToggled: {
+                        if (inspectorRoot.bulb) {
+                            inspectorRoot.bulb.isLeft = checked
+                            bulbManager.saveConfig()
+                        }
+                    }
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 12
+
+                Label { text: "Depth:"; color: "#aaa"; font.pixelSize: 12 }
+                SpinBox {
+                    id: depthSpin
+                    from: 1; to: 100
+                    value: inspectorRoot.bulb ? inspectorRoot.bulb.depth : 1
+                    editable: true
+                    onValueModified: {
+                        if (inspectorRoot.bulb)
+                            inspectorRoot.bulb.depth = value
                     }
                 }
             }

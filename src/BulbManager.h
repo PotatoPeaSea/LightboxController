@@ -34,6 +34,8 @@ public:
         ConnectedRole,
         SelectedRole,
         DisplayColorRole,
+        IsLeftRole,
+        DepthRole,
         BulbObjectRole  // Returns the Bulb* itself
     };
 
@@ -63,6 +65,7 @@ public:
     Q_INVOKABLE void toggleBulbSelection(int index);
     Q_INVOKABLE void handleBulbClick(int index);
     Q_INVOKABLE void deselectAll();
+    Q_INVOKABLE void selectAllBulbs();
     Q_INVOKABLE void connectAll();
     Q_INVOKABLE void disconnectAll();
 

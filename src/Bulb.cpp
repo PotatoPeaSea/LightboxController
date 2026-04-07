@@ -115,6 +115,16 @@ void Bulb::setPosZ(float z)
     if (!qFuzzyCompare(m_posZ, z)) { m_posZ = z; emit positionChanged(); }
 }
 
+void Bulb::setIsLeft(bool isLeft)
+{
+    if (m_isLeft != isLeft) { m_isLeft = isLeft; emit isLeftChanged(); }
+}
+
+void Bulb::setDepth(int depth)
+{
+    if (m_depth != depth) { m_depth = depth; emit depthChanged(); }
+}
+
 void Bulb::setSelected(bool selected)
 {
     if (m_selected != selected) { m_selected = selected; emit selectedChanged(); }
@@ -254,6 +264,8 @@ QJsonObject Bulb::toJson() const
     json["posX"] = static_cast<double>(m_posX);
     json["posY"] = static_cast<double>(m_posY);
     json["posZ"] = static_cast<double>(m_posZ);
+    json["isLeft"] = m_isLeft;
+    json["depth"] = m_depth;
     return json;
 }
 
@@ -267,5 +279,11 @@ Bulb* Bulb::fromJson(const QJsonObject& json, QObject* parent)
     bulb->setPosX(static_cast<float>(json["posX"].toDouble(0)));
     bulb->setPosY(static_cast<float>(json["posY"].toDouble(0)));
     bulb->setPosZ(static_cast<float>(json["posZ"].toDouble(0)));
+    if (json.contains("isLeft")) {
+        bulb->setIsLeft(json["isLeft"].toBool());
+    }
+    if (json.contains("depth")) {
+        bulb->setDepth(json["depth"].toInt());
+    }
     return bulb;
 }

@@ -1,0 +1,10 @@
+^C:\USERS\MATTH\ONEDRIVE\DOCUMENTS\PERSONAL PROJECTS\LIGHTBOXCONTROLLER\BUILD\CMAKEFILES\C814792C4D98240DF8F5A16EBD161FB2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController" "-BC:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/LightboxController.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
