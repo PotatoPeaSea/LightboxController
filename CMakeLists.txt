@@ -23,6 +23,7 @@ find_package(Qt5 REQUIRED COMPONENTS
     3DQuickRender
     3DQuickInput
     Multimedia
+    MultimediaWidgets
 )
 
 # Source files
@@ -32,6 +33,7 @@ set(SOURCES
     src/BulbScanner.cpp
     src/Bulb.cpp
     src/BulbManager.cpp
+    src/VideoPatternEngine.cpp
 )
 
 set(HEADERS
@@ -39,6 +41,7 @@ set(HEADERS
     src/BulbScanner.h
     src/Bulb.h
     src/BulbManager.h
+    src/VideoPatternEngine.h
 )
 
 # QML resource file
@@ -68,6 +71,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt5::3DQuickRender
     Qt5::3DQuickInput
     Qt5::Multimedia
+    Qt5::MultimediaWidgets
     ws2_32
 )
 

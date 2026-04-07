@@ -31,6 +31,7 @@ REM ─── Core DLLs ──────────────────�
 for %%F in (
     Qt5Core Qt5Gui Qt5Widgets Qt5Quick Qt5Qml Qt5QmlModels
     Qt5QuickControls2 Qt5QuickTemplates2 Qt5Network Qt5Multimedia
+    Qt5MultimediaWidgets
     Qt53DCore Qt53DRender Qt53DInput Qt53DExtras Qt53DLogic
     Qt53DQuick Qt53DQuickExtras Qt53DQuickRender Qt53DQuickInput
     Qt53DAnimation Qt53DQuickAnimation
@@ -89,6 +90,12 @@ if exist "%QtPath%\plugins\geometryloaders" (
     xcopy /Y /E /Q "%QtPath%\plugins\geometryloaders\*" "%OutDir%\geometryloaders\" >nul
 )
 
+REM ─── Media service plugins (for video playback) ──────────
+if not exist "%OutDir%\mediaservice" mkdir "%OutDir%\mediaservice"
+if exist "%QtPath%\plugins\mediaservice" (
+    xcopy /Y /E /Q "%QtPath%\plugins\mediaservice\*" "%OutDir%\mediaservice\" >nul
+)
+
 REM ─── QML modules ─────────────────────────────────────────
 for %%M in (
     QtQuick.2
@@ -107,6 +114,7 @@ for %%M in (
     Qt3D\QuickExtras
     Qt3D\QuickRender
     Qt3D\QuickInput
+    Qt\labs\platform
 ) do (
     if exist "%QtPath%\qml\%%M" (
         if not exist "%OutDir%\qml\%%M" mkdir "%OutDir%\qml\%%M"

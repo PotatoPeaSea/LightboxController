@@ -87,6 +87,8 @@ C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QM3uPlaylistPlugi
 C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QWasapiPlugin.cmake
 C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QWindowsAudioPlugin.cmake
 C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_WMFServicePlugin.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfig.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfigVersion.cmake
 C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake
 C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake
 C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake

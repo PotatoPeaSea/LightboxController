@@ -3,5 +3,7 @@
         <file>Main.qml</file>
         <file>InspectorPanel.qml</file>
         <file>DiscoverDialog.qml</file>
+        <file>VideoPatternPanel.qml</file>
+        <file>PatternLibraryPanel.qml</file>
     </qresource>
 </RCC>

@@ -19,6 +19,9 @@
     <ClCompile Include="C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\src\BulbManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\src\VideoPatternEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\qrc_qml.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -43,6 +46,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\src\BulbManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\src\VideoPatternEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

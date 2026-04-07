@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\build\Release\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\x64\Release\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
       <FullPath>C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\Release\LightboxController.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\build\Release\ALL_BUILD</FullPath>
+      <FullPath>C:\Users\matth\OneDrive\Documents\Personal Projects\LightboxController\build\x64\Release\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

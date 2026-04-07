@@ -1,0 +1,6 @@
+Loaded 2 bulbs from config
+QQmlApplicationEngine failed to load component
+qrc:/Main.qml:430:5: Type VideoPatternPanel unavailable
+qrc:/VideoPatternPanel.qml:6:1: Type Dialog unavailable
+file:///C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/Release/qml/QtQuick/Dialogs/DefaultDialogWrapper.qml:41:1: module "QtQuick.Controls" version 1.2 is not installed
+Config saved to: "C:/Users/matth/AppData/Roaming/LightboxController/LightboxController/config.json"

@@ -2,4 +2,5 @@
 #include <UVLADIE3JM/moc_Bulb.cpp>
 #include <UVLADIE3JM/moc_BulbManager.cpp>
 #include <UVLADIE3JM/moc_BulbScanner.cpp>
+#include <UVLADIE3JM/moc_VideoPatternEngine.cpp>
 #include <UVLADIE3JM/moc_ZenggeProtocol.cpp>

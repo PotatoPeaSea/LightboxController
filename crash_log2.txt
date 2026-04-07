@@ -1,0 +1,67 @@
+Loaded 2 bulbs from config
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.97" ) error: "Network operation timed out"
+Bulb "New Bulb" ( "192.168.1.97" ) error: "Failed to connect to 192.168.1.97:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.97" ) error: "Failed to connect to 192.168.1.97:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.97" ) error: "Failed to connect to 192.168.1.97:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Bulb "New Bulb" ( "192.168.1.96" ) error: "Failed to connect to 192.168.1.96:5577 - Socket operation timed out"
+Connected to bulb: "192.168.1.96"
+Connected to bulb: "192.168.1.97"
+Video loaded: "file:///C:/Users/matth/Downloads/4K Gradient background loop visual animation.mp4"
+DirectShowPlayerService::doRender: Unresolved error code 0x80040266 (IDispatch error #102)
+Media error: ""
+qml: Pattern engine error: 
+Extraction started, sampleCount = 3
+Extraction cancelled
+Extraction started, sampleCount = 3
+Target bulbs: 1
+Target bulbs: 1
+Target bulbs: 1
+Extraction cancelled
+qrc:/VideoPatternPanel.qml:315: TypeError: Cannot read property 'currentColors' of null
+qrc:/VideoPatternPanel.qml:292: TypeError: Cannot read property 'currentColors' of null
+qrc:/VideoPatternPanel.qml:275: TypeError: Cannot read property 'patternDurationMs' of null
+qrc:/VideoPatternPanel.qml:269: TypeError: Cannot read property 'patternDurationMs' of null
+qrc:/VideoPatternPanel.qml:270: TypeError: Cannot read property 'playbackPositionMs' of null
+qrc:/VideoPatternPanel.qml:260: TypeError: Cannot read property 'playbackPositionMs' of null
+qrc:/VideoPatternPanel.qml:257: TypeError: Cannot read property 'patternReady' of null
+qrc:/VideoPatternPanel.qml:246: TypeError: Cannot read property 'playing' of null
+qrc:/VideoPatternPanel.qml:232: TypeError: Cannot read property 'playing' of null
+qrc:/VideoPatternPanel.qml:233: TypeError: Cannot read property 'patternReady' of null
+qrc:/VideoPatternPanel.qml:215: TypeError: Cannot read property 'targetBulbCount' of null
+qrc:/VideoPatternPanel.qml:218: TypeError: Cannot read property 'targetBulbCount' of null
+qrc:/VideoPatternPanel.qml:164: TypeError: Cannot read property 'patternReady' of null
+qrc:/VideoPatternPanel.qml:165: TypeError: Cannot read property 'patternFrameCount' of null
+qrc:/VideoPatternPanel.qml:143: TypeError: Cannot read property 'extractionProgress' of null
+qrc:/VideoPatternPanel.qml:144: TypeError: Cannot read property 'extracting' of null
+qrc:/VideoPatternPanel.qml:133: TypeError: Cannot read property 'extracting' of null
+qrc:/VideoPatternPanel.qml:124: TypeError: Cannot read property 'extracting' of null
+qrc:/VideoPatternPanel.qml:125: TypeError: Cannot read property 'fileName' of null
+qrc:/VideoPatternPanel.qml:109: TypeError: Cannot read property 'looping' of null
+qrc:/VideoPatternPanel.qml:70: TypeError: Cannot read property 'fileName' of null
+qrc:/VideoPatternPanel.qml:67: TypeError: Cannot read property 'fileName' of null
+qrc:/VideoPatternPanel.qml:68: TypeError: Cannot read property 'fileName' of null
+qrc:/VideoPatternPanel.qml:154: TypeError: Cannot read property 'extractionProgress' of null
+Config saved to: "C:/Users/matth/AppData/Roaming/LightboxController/LightboxController/config.json"
+Disconnected from bulb: "192.168.1.96"
+Disconnected from bulb: "192.168.1.97"
+qrc:/DiscoverDialog.qml:127: TypeError: Cannot read property 'scanning' of null
+qrc:/DiscoverDialog.qml:128: TypeError: Cannot read property 'scanning' of null
+qrc:/DiscoverDialog.qml:106: TypeError: Cannot read property 'scanning' of null
+qrc:/DiscoverDialog.qml:54: TypeError: Cannot read property 'discoveredCount' of null
+qrc:/DiscoverDialog.qml:34: TypeError: Cannot read property 'scanning' of null
+qrc:/DiscoverDialog.qml:28: TypeError: Cannot read property 'scanning' of null
+qrc:/DiscoverDialog.qml:29: TypeError: Cannot read property 'scanning' of null
+qrc:/InspectorPanel.qml:8: TypeError: Cannot read property 'selectedBulb' of null
+qrc:/Main.qml:335: TypeError: Cannot call method 'bulbAt' of null
+qrc:/Main.qml:335: TypeError: Cannot read property 'bulbAt' of null
+qrc:/Main.qml:76: TypeError: Cannot read property 'count' of null
+qrc:/Main.qml:47: TypeError: Cannot read property 'scanning' of null
+qrc:/Main.qml:48: TypeError: Cannot read property 'scanning' of null

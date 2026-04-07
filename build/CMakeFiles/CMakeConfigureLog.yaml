@@ -4536,3 +4536,115 @@ events:
         - "C:/Program Files/CMake"
         - "C:/Program Files (x86)/LightboxController"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake:28 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    name: "Qt5MultimediaWidgets"
+    configs:
+      -
+        filename: "Qt5MultimediaWidgetsConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt5multimediawidgets-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt5MultimediaWidgets"
+      search_paths:
+        - "C:/Qt/5.15.2/msvc2019_64/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/CMakeFiles/pkgRedirects/Qt5MultimediaWidgetsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/matth/OneDrive/Documents/Personal Projects/LightboxController/build/CMakeFiles/pkgRedirects/qt5multimediawidgets-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5MultimediaWidgetsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/5.15.2/msvc2019_64/lib/cmake/qt5multimediawidgets-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfig.cmake"
+      mode: "config"
+      version: "5.15.2"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "C:\\Qt\\5.15.2\\msvc2019_64"
+      ENV{PATH}:
+        - "C:\\Python314\\Scripts\\"
+        - "C:\\Python314\\"
+        - "C:\\Users\\matth\\.platformio\\penv\\Scripts"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\MinGW\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\cursor\\resources\\app\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\MATLAB\\R2025b\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\usbipd-win\\"
+        - "C:\\Users\\matth\\anaconda3"
+        - "C:\\Users\\matth\\anaconda3\\Library\\mingw-w64\\bin"
+        - "C:\\Users\\matth\\anaconda3\\Library\\usr\\bin"
+        - "C:\\Users\\matth\\anaconda3\\Library\\bin"
+        - "C:\\Users\\matth\\anaconda3\\Scripts"
+        - "C:\\Users\\matth\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\matth\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\matth\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\matth\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\matth\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\matth\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\MinGW\\bin"
+        - "C:\\Users\\matth\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\opencv\\build\\x64\\vc16\\bin"
+        - "C:\\opencv\\build\\x64\\vc16\\lib"
+        - "C:\\Users\\matth\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\matth\\.platformio\\packages\\toolchain-xtensa-esp-elf\\xtensa-esp-elf\\bin"
+        - "C:\\Users\\matth\\AppData\\Roaming\\npm"
+        - "C:\\Users\\matth\\.dotnet\\tools"
+        - "C:\\Users\\matth\\AppData\\Local\\Programs\\Antigravity\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/LightboxController"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/LightboxController"
+...

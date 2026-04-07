@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_BulbManager_t {
-    QByteArrayData data[48];
-    char stringdata0[508];
+    QByteArrayData data[52];
+    char stringdata0[575];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -59,27 +59,31 @@ QT_MOC_LITERAL(23, 262, 5), // "index"
 QT_MOC_LITERAL(24, 268, 6), // "bulbAt"
 QT_MOC_LITERAL(25, 275, 5), // "Bulb*"
 QT_MOC_LITERAL(26, 281, 10), // "selectBulb"
-QT_MOC_LITERAL(27, 292, 11), // "deselectAll"
-QT_MOC_LITERAL(28, 304, 10), // "connectAll"
-QT_MOC_LITERAL(29, 315, 13), // "disconnectAll"
-QT_MOC_LITERAL(30, 329, 16), // "setSelectedColor"
-QT_MOC_LITERAL(31, 346, 1), // "r"
-QT_MOC_LITERAL(32, 348, 1), // "g"
-QT_MOC_LITERAL(33, 350, 1), // "b"
-QT_MOC_LITERAL(34, 352, 16), // "setSelectedWhite"
-QT_MOC_LITERAL(35, 369, 4), // "warm"
-QT_MOC_LITERAL(36, 374, 4), // "cool"
-QT_MOC_LITERAL(37, 379, 16), // "setSelectedPower"
-QT_MOC_LITERAL(38, 396, 2), // "on"
-QT_MOC_LITERAL(39, 399, 10), // "saveConfig"
-QT_MOC_LITERAL(40, 410, 10), // "loadConfig"
-QT_MOC_LITERAL(41, 421, 12), // "discoveredIp"
-QT_MOC_LITERAL(42, 434, 13), // "discoveredMac"
-QT_MOC_LITERAL(43, 448, 15), // "discoveredModel"
-QT_MOC_LITERAL(44, 464, 5), // "count"
-QT_MOC_LITERAL(45, 470, 8), // "scanning"
-QT_MOC_LITERAL(46, 479, 12), // "selectedBulb"
-QT_MOC_LITERAL(47, 492, 15) // "discoveredCount"
+QT_MOC_LITERAL(27, 292, 19), // "toggleBulbSelection"
+QT_MOC_LITERAL(28, 312, 15), // "handleBulbClick"
+QT_MOC_LITERAL(29, 328, 11), // "deselectAll"
+QT_MOC_LITERAL(30, 340, 10), // "connectAll"
+QT_MOC_LITERAL(31, 351, 13), // "disconnectAll"
+QT_MOC_LITERAL(32, 365, 16), // "setSelectedColor"
+QT_MOC_LITERAL(33, 382, 1), // "r"
+QT_MOC_LITERAL(34, 384, 1), // "g"
+QT_MOC_LITERAL(35, 386, 1), // "b"
+QT_MOC_LITERAL(36, 388, 16), // "setSelectedWhite"
+QT_MOC_LITERAL(37, 405, 4), // "warm"
+QT_MOC_LITERAL(38, 410, 4), // "cool"
+QT_MOC_LITERAL(39, 415, 16), // "setSelectedPower"
+QT_MOC_LITERAL(40, 432, 2), // "on"
+QT_MOC_LITERAL(41, 435, 12), // "allBulbsList"
+QT_MOC_LITERAL(42, 448, 17), // "selectedBulbsList"
+QT_MOC_LITERAL(43, 466, 10), // "saveConfig"
+QT_MOC_LITERAL(44, 477, 10), // "loadConfig"
+QT_MOC_LITERAL(45, 488, 12), // "discoveredIp"
+QT_MOC_LITERAL(46, 501, 13), // "discoveredMac"
+QT_MOC_LITERAL(47, 515, 15), // "discoveredModel"
+QT_MOC_LITERAL(48, 531, 5), // "count"
+QT_MOC_LITERAL(49, 537, 8), // "scanning"
+QT_MOC_LITERAL(50, 546, 12), // "selectedBulb"
+QT_MOC_LITERAL(51, 559, 15) // "discoveredCount"
 
     },
     "BulbManager\0countChanged\0\0scanningChanged\0"
@@ -89,13 +93,14 @@ QT_MOC_LITERAL(47, 492, 15) // "discoveredCount"
     "DiscoveredBulb\0bulb\0onScanFinished\0"
     "onBulbDataChanged\0discover\0stopScan\0"
     "addBulb\0addBulbManual\0removeBulb\0index\0"
-    "bulbAt\0Bulb*\0selectBulb\0deselectAll\0"
-    "connectAll\0disconnectAll\0setSelectedColor\0"
-    "r\0g\0b\0setSelectedWhite\0warm\0cool\0"
-    "setSelectedPower\0on\0saveConfig\0"
-    "loadConfig\0discoveredIp\0discoveredMac\0"
-    "discoveredModel\0count\0scanning\0"
-    "selectedBulb\0discoveredCount"
+    "bulbAt\0Bulb*\0selectBulb\0toggleBulbSelection\0"
+    "handleBulbClick\0deselectAll\0connectAll\0"
+    "disconnectAll\0setSelectedColor\0r\0g\0b\0"
+    "setSelectedWhite\0warm\0cool\0setSelectedPower\0"
+    "on\0allBulbsList\0selectedBulbsList\0"
+    "saveConfig\0loadConfig\0discoveredIp\0"
+    "discoveredMac\0discoveredModel\0count\0"
+    "scanning\0selectedBulb\0discoveredCount"
 };
 #undef QT_MOC_LITERAL
 
@@ -105,46 +110,50 @@ static const uint qt_meta_data_BulbManager[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
-       4,  224, // properties
+      32,   14, // methods
+       4,  252, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  154,    2, 0x06 /* Public */,
-       3,    0,  155,    2, 0x06 /* Public */,
-       4,    0,  156,    2, 0x06 /* Public */,
-       5,    0,  157,    2, 0x06 /* Public */,
-       6,    3,  158,    2, 0x06 /* Public */,
-      10,    0,  165,    2, 0x06 /* Public */,
-      11,    1,  166,    2, 0x06 /* Public */,
+       1,    0,  174,    2, 0x06 /* Public */,
+       3,    0,  175,    2, 0x06 /* Public */,
+       4,    0,  176,    2, 0x06 /* Public */,
+       5,    0,  177,    2, 0x06 /* Public */,
+       6,    3,  178,    2, 0x06 /* Public */,
+      10,    0,  185,    2, 0x06 /* Public */,
+      11,    1,  186,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    1,  169,    2, 0x08 /* Private */,
-      16,    0,  172,    2, 0x08 /* Private */,
-      17,    0,  173,    2, 0x08 /* Private */,
+      13,    1,  189,    2, 0x08 /* Private */,
+      16,    0,  192,    2, 0x08 /* Private */,
+      17,    0,  193,    2, 0x08 /* Private */,
 
  // methods: name, argc, parameters, tag, flags
-      18,    0,  174,    2, 0x02 /* Public */,
-      19,    0,  175,    2, 0x02 /* Public */,
-      20,    3,  176,    2, 0x02 /* Public */,
-      21,    1,  183,    2, 0x02 /* Public */,
-      22,    1,  186,    2, 0x02 /* Public */,
-      24,    1,  189,    2, 0x02 /* Public */,
-      26,    1,  192,    2, 0x02 /* Public */,
-      27,    0,  195,    2, 0x02 /* Public */,
-      28,    0,  196,    2, 0x02 /* Public */,
-      29,    0,  197,    2, 0x02 /* Public */,
-      30,    3,  198,    2, 0x02 /* Public */,
-      34,    2,  205,    2, 0x02 /* Public */,
-      37,    1,  210,    2, 0x02 /* Public */,
-      39,    0,  213,    2, 0x02 /* Public */,
-      40,    0,  214,    2, 0x02 /* Public */,
-      41,    1,  215,    2, 0x02 /* Public */,
-      42,    1,  218,    2, 0x02 /* Public */,
-      43,    1,  221,    2, 0x02 /* Public */,
+      18,    0,  194,    2, 0x02 /* Public */,
+      19,    0,  195,    2, 0x02 /* Public */,
+      20,    3,  196,    2, 0x02 /* Public */,
+      21,    1,  203,    2, 0x02 /* Public */,
+      22,    1,  206,    2, 0x02 /* Public */,
+      24,    1,  209,    2, 0x02 /* Public */,
+      26,    1,  212,    2, 0x02 /* Public */,
+      27,    1,  215,    2, 0x02 /* Public */,
+      28,    1,  218,    2, 0x02 /* Public */,
+      29,    0,  221,    2, 0x02 /* Public */,
+      30,    0,  222,    2, 0x02 /* Public */,
+      31,    0,  223,    2, 0x02 /* Public */,
+      32,    3,  224,    2, 0x02 /* Public */,
+      36,    2,  231,    2, 0x02 /* Public */,
+      39,    1,  236,    2, 0x02 /* Public */,
+      41,    0,  239,    2, 0x02 /* Public */,
+      42,    0,  240,    2, 0x02 /* Public */,
+      43,    0,  241,    2, 0x02 /* Public */,
+      44,    0,  242,    2, 0x02 /* Public */,
+      45,    1,  243,    2, 0x02 /* Public */,
+      46,    1,  246,    2, 0x02 /* Public */,
+      47,    1,  249,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -168,12 +177,16 @@ static const uint qt_meta_data_BulbManager[] = {
     QMetaType::Void, QMetaType::Int,   23,
     0x80000000 | 25, QMetaType::Int,   23,
     QMetaType::Void, QMetaType::Int,   23,
+    QMetaType::Void, QMetaType::Int,   23,
+    QMetaType::Void, QMetaType::Int,   23,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   31,   32,   33,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   35,   36,
-    QMetaType::Void, QMetaType::Bool,   38,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   33,   34,   35,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   37,   38,
+    QMetaType::Void, QMetaType::Bool,   40,
+    QMetaType::QVariantList,
+    QMetaType::QVariantList,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::QString, QMetaType::Int,   23,
@@ -181,10 +194,10 @@ static const uint qt_meta_data_BulbManager[] = {
     QMetaType::QString, QMetaType::Int,   23,
 
  // properties: name, type, flags
-      44, QMetaType::Int, 0x00495001,
-      45, QMetaType::Bool, 0x00495001,
-      46, 0x80000000 | 25, 0x00495009,
-      47, QMetaType::Int, 0x00495001,
+      48, QMetaType::Int, 0x00495001,
+      49, QMetaType::Bool, 0x00495001,
+      50, 0x80000000 | 25, 0x00495009,
+      51, QMetaType::Int, 0x00495001,
 
  // properties: notify_signal_id
        0,
@@ -219,19 +232,25 @@ void BulbManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 15: { Bulb* _r = _t->bulbAt((*reinterpret_cast< int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< Bulb**>(_a[0]) = std::move(_r); }  break;
         case 16: _t->selectBulb((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 17: _t->deselectAll(); break;
-        case 18: _t->connectAll(); break;
-        case 19: _t->disconnectAll(); break;
-        case 20: _t->setSelectedColor((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 21: _t->setSelectedWhite((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 22: _t->setSelectedPower((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 23: _t->saveConfig(); break;
-        case 24: _t->loadConfig(); break;
-        case 25: { QString _r = _t->discoveredIp((*reinterpret_cast< int(*)>(_a[1])));
+        case 17: _t->toggleBulbSelection((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->handleBulbClick((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: _t->deselectAll(); break;
+        case 20: _t->connectAll(); break;
+        case 21: _t->disconnectAll(); break;
+        case 22: _t->setSelectedColor((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 23: _t->setSelectedWhite((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 24: _t->setSelectedPower((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 25: { QVariantList _r = _t->allBulbsList();
+            if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
+        case 26: { QVariantList _r = _t->selectedBulbsList();
+            if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
+        case 27: _t->saveConfig(); break;
+        case 28: _t->loadConfig(); break;
+        case 29: { QString _r = _t->discoveredIp((*reinterpret_cast< int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 26: { QString _r = _t->discoveredMac((*reinterpret_cast< int(*)>(_a[1])));
+        case 30: { QString _r = _t->discoveredMac((*reinterpret_cast< int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 27: { QString _r = _t->discoveredModel((*reinterpret_cast< int(*)>(_a[1])));
+        case 31: { QString _r = _t->discoveredModel((*reinterpret_cast< int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -341,13 +360,13 @@ int BulbManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 32;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 28)
+        if (_id < 32)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 28;
+        _id -= 32;
     }
 #ifndef QT_NO_PROPERTIES
     else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

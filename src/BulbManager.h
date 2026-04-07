@@ -60,6 +60,8 @@ public:
     Q_INVOKABLE void removeBulb(int index);
     Q_INVOKABLE Bulb* bulbAt(int index) const;
     Q_INVOKABLE void selectBulb(int index);
+    Q_INVOKABLE void toggleBulbSelection(int index);
+    Q_INVOKABLE void handleBulbClick(int index);
     Q_INVOKABLE void deselectAll();
     Q_INVOKABLE void connectAll();
     Q_INVOKABLE void disconnectAll();
@@ -68,6 +70,10 @@ public:
     Q_INVOKABLE void setSelectedColor(int r, int g, int b);
     Q_INVOKABLE void setSelectedWhite(int warm, int cool);
     Q_INVOKABLE void setSelectedPower(bool on);
+
+    // Bulb list accessors for pattern engine
+    Q_INVOKABLE QVariantList allBulbsList() const;
+    Q_INVOKABLE QVariantList selectedBulbsList() const;
 
     // Persistence
     Q_INVOKABLE void saveConfig();

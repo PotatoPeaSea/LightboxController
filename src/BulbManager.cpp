@@ -5,6 +5,7 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QDebug>
+#include <QGuiApplication>
 
 BulbManager::BulbManager(QObject* parent)
     : QAbstractListModel(parent)
@@ -241,9 +242,9 @@ Bulb* BulbManager::bulbAt(int index) const
 
 void BulbManager::selectBulb(int index)
 {
-    // Deselect previous
-    if (m_selectedBulb) {
-        m_selectedBulb->setSelected(false);
+    // Single-click: deselect all others, select this one
+    for (auto* bulb : m_bulbs) {
+        bulb->setSelected(false);
     }
 
     if (index >= 0 && index < m_bulbs.size()) {
@@ -253,6 +254,36 @@ void BulbManager::selectBulb(int index)
         m_selectedBulb = nullptr;
     }
     emit selectedBulbChanged();
+}
+
+void BulbManager::toggleBulbSelection(int index)
+{
+    if (index < 0 || index >= m_bulbs.size()) return;
+
+    Bulb* bulb = m_bulbs.at(index);
+    bulb->setSelected(!bulb->isSelected());
+
+    // Update selectedBulb to reflect latest action
+    if (bulb->isSelected()) {
+        m_selectedBulb = bulb;
+    } else if (m_selectedBulb == bulb) {
+        // Find another selected bulb for the inspector
+        m_selectedBulb = nullptr;
+        for (auto* b : m_bulbs) {
+            if (b->isSelected()) { m_selectedBulb = b; break; }
+        }
+    }
+    emit selectedBulbChanged();
+}
+
+void BulbManager::handleBulbClick(int index)
+{
+    // Check Ctrl modifier from the OS — works for both QML MouseArea and Qt3D ObjectPicker
+    if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier) {
+        toggleBulbSelection(index);
+    } else {
+        selectBulb(index);
+    }
 }
 
 void BulbManager::deselectAll()
@@ -306,6 +337,26 @@ void BulbManager::setSelectedPower(bool on)
             else bulb->turnOff();
         }
     }
+}
+
+// ─── Bulb List Accessors ──────────────────────────────────
+
+QVariantList BulbManager::allBulbsList() const
+{
+    QVariantList list;
+    for (auto* bulb : m_bulbs)
+        list.append(QVariant::fromValue(bulb));
+    return list;
+}
+
+QVariantList BulbManager::selectedBulbsList() const
+{
+    QVariantList list;
+    for (auto* bulb : m_bulbs) {
+        if (bulb->isSelected())
+            list.append(QVariant::fromValue(bulb));
+    }
+    return list;
 }
 
 // ─── Model Update Notifications ───────────────────────────

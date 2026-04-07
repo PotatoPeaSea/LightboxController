@@ -19,6 +19,9 @@ ApplicationWindow {
 
     color: "#1a1a2e"
 
+    property bool videoPatternVisible: false
+    property bool patternLibraryVisible: false
+
     // ─── Header Toolbar ───────────────────────────────────
 
     header: ToolBar {
@@ -63,6 +66,20 @@ ApplicationWindow {
                 palette.button: "#533483"
                 palette.buttonText: "#e0e0e0"
                 onClicked: bulbManager.connectAll()
+            }
+
+            Button {
+                text: videoPatternVisible ? "🎬 Hide Extract" : "🎬 Extract"
+                palette.button: videoPatternVisible ? "#533483" : "#0f3460"
+                palette.buttonText: "#e0e0e0"
+                onClicked: videoPatternVisible = !videoPatternVisible
+            }
+
+            Button {
+                text: patternLibraryVisible ? "📚 Hide Library" : "📚 Patterns"
+                palette.button: patternLibraryVisible ? "#533483" : "#0f3460"
+                palette.buttonText: "#e0e0e0"
+                onClicked: patternLibraryVisible = !patternLibraryVisible
             }
 
             Label {
@@ -115,16 +132,16 @@ ApplicationWindow {
                         width: bulbListView.width
                         height: 56
                         radius: 6
-                        color: model.selected ? "#2a2a5e" : (bulbItemMa.containsMouse ? "#1e1e4a" : "#16213e")
-                        border.color: model.selected ? "#e94560" : "transparent"
-                        border.width: model.selected ? 2 : 0
+                        color: (model.selected !== undefined && model.selected) ? "#2a2a5e" : (bulbItemMa.containsMouse ? "#1e1e4a" : "#16213e")
+                        border.color: (model.selected !== undefined && model.selected) ? "#e94560" : "transparent"
+                        border.width: (model.selected !== undefined && model.selected) ? 2 : 0
 
                         MouseArea {
                             id: bulbItemMa
                             anchors.fill: parent
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
-                            onClicked: bulbManager.selectBulb(index)
+                            onClicked: bulbManager.handleBulbClick(index)
                         }
 
                         RowLayout {
@@ -135,8 +152,8 @@ ApplicationWindow {
                             // Color indicator
                             Rectangle {
                                 width: 12; height: 12; radius: 6
-                                color: model.displayColor
-                                border.color: Qt.lighter(model.displayColor, 1.3)
+                                color: model.displayColor !== undefined ? model.displayColor : "#333"
+                                border.color: Qt.lighter(model.displayColor !== undefined ? model.displayColor : "#333", 1.3)
                                 border.width: 1
                             }
 
@@ -145,15 +162,15 @@ ApplicationWindow {
                                 Layout.fillWidth: true
 
                                 Label {
-                                    text: model.label
-                                    color: model.selected ? "#e94560" : "#e0e0e0"
+                                    text: model.label !== undefined ? model.label : ""
+                                    color: (model.selected !== undefined && model.selected) ? "#e94560" : "#e0e0e0"
                                     font.pixelSize: 13
-                                    font.bold: model.selected
+                                    font.bold: model.selected !== undefined ? model.selected : false
                                     elide: Text.ElideRight
                                     Layout.fillWidth: true
                                 }
                                 Label {
-                                    text: model.ip
+                                    text: model.ip !== undefined ? model.ip : ""
                                     color: "#666"
                                     font.pixelSize: 10
                                     elide: Text.ElideRight
@@ -164,7 +181,7 @@ ApplicationWindow {
                             // Connection dot
                             Rectangle {
                                 width: 8; height: 8; radius: 4
-                                color: model.connected ? "#4caf50" : "#f44336"
+                                color: (model.connected !== undefined && model.connected) ? "#4caf50" : "#f44336"
                             }
                         }
                     }
@@ -355,7 +372,7 @@ ApplicationWindow {
                                     ObjectPicker {
                                         hoverEnabled: true
                                         onClicked: {
-                                            bulbManager.selectBulb(bulbEntity.bulbIndex)
+                                            bulbManager.handleBulbClick(bulbEntity.bulbIndex)
                                         }
                                     }
                                 ]
@@ -371,9 +388,7 @@ ApplicationWindow {
                                             quadraticAttenuation: 0.05
                                         },
                                         Transform {
-                                            translation: Qt.vector3d(bulbEntity.bPosX,
-                                                                      bulbEntity.bPosY + 0.8,
-                                                                      bulbEntity.bPosZ)
+                                            translation: Qt.vector3d(0, 0.8, 0)
                                         }
                                     ]
                                 }
@@ -393,9 +408,7 @@ ApplicationWindow {
                                             diffuse: "#e94560"
                                         },
                                         Transform {
-                                            translation: Qt.vector3d(bulbEntity.bPosX,
-                                                                      bulbEntity.bPosY,
-                                                                      bulbEntity.bPosZ)
+                                            translation: Qt.vector3d(0, 0, 0)
                                             rotationX: 90
                                         }
                                     ]
@@ -404,6 +417,40 @@ ApplicationWindow {
                         }
                     }
                 }
+            }
+        }
+
+        // ─── Video Pattern Panel (toggleable) ─────────
+        Rectangle {
+            visible: videoPatternVisible
+            Layout.preferredWidth: 280
+            Layout.minimumWidth: 240
+            Layout.maximumWidth: 350
+            Layout.fillHeight: true
+            color: "#16213e"
+            border.color: "#0f3460"
+            border.width: 1
+
+            VideoPatternPanel {
+                id: videoPatternPanel
+                anchors.fill: parent
+            }
+        }
+
+        // ─── Pattern Library Panel (toggleable) ───────
+        Rectangle {
+            visible: patternLibraryVisible
+            Layout.preferredWidth: 260
+            Layout.minimumWidth: 220
+            Layout.maximumWidth: 320
+            Layout.fillHeight: true
+            color: "#16213e"
+            border.color: "#0f3460"
+            border.width: 1
+
+            PatternLibraryPanel {
+                id: patternLibraryPanel
+                anchors.fill: parent
             }
         }
 
