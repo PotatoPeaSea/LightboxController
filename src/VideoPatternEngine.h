@@ -50,6 +50,12 @@ class VideoPatternEngine : public QAbstractVideoSurface
     Q_PROPERTY(QString statusMessage READ statusMessage NOTIFY statusMessageChanged)
     Q_PROPERTY(QStringList savedPatterns READ savedPatterns NOTIFY savedPatternsChanged)
 
+    // Pattern queue
+    Q_PROPERTY(QStringList patternQueue READ patternQueue NOTIFY patternQueueChanged)
+    Q_PROPERTY(bool manualAdvance READ isManualAdvance WRITE setManualAdvance NOTIFY manualAdvanceChanged)
+    Q_PROPERTY(bool waitingForTrigger READ isWaitingForTrigger NOTIFY waitingForTriggerChanged)
+    Q_PROPERTY(int currentQueueIndex READ currentQueueIndex NOTIFY currentQueueIndexChanged)
+
 public:
     explicit VideoPatternEngine(QObject* parent = nullptr);
     ~VideoPatternEngine();
@@ -77,12 +83,17 @@ public:
     int targetBulbCount() const;
     QString statusMessage() const;
     QStringList savedPatterns() const;
+    QStringList patternQueue() const;
+    bool isManualAdvance() const;
+    bool isWaitingForTrigger() const;
+    int currentQueueIndex() const;
 
     // ─── Property setters ─────────────────────────────
     void setSampleCount(int count);
     void setLooping(bool loop);
     void setPlaybackSpeed(qreal speed);
     void setPlaybackPositionMs(int ms);
+    void setManualAdvance(bool manual);
 
     // ─── Commands (Q_INVOKABLE for QML) ───────────────
     Q_INVOKABLE void loadVideo(const QString& url);
@@ -96,6 +107,14 @@ public:
     Q_INVOKABLE void saveCurrentPattern(const QString& name);
     Q_INVOKABLE void loadPattern(const QString& name);
     Q_INVOKABLE void deletePattern(const QString& name);
+
+    // Queue commands
+    Q_INVOKABLE void enqueuePattern(const QString& name);
+    Q_INVOKABLE void removeFromQueue(int index);
+    Q_INVOKABLE void clearQueue();
+    Q_INVOKABLE void playQueue();
+    Q_INVOKABLE void triggerNext();
+    Q_INVOKABLE void moveQueueItem(int from, int to);
 
 signals:
     void sourceChanged();
@@ -113,6 +132,10 @@ signals:
     void errorOccurred(const QString& message);
     void statusMessageChanged();
     void savedPatternsChanged();
+    void patternQueueChanged();
+    void manualAdvanceChanged();
+    void waitingForTriggerChanged();
+    void currentQueueIndexChanged();
 
 private slots:
     void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
@@ -126,6 +149,7 @@ private:
     void updateCurrentColors(const QVector<QColor>& colors);
     void setStatus(const QString& msg);
     QString patternsDir() const;
+    void advanceQueue();
 
     QMediaPlayer* m_player = nullptr;
     QString m_source;
@@ -155,4 +179,11 @@ private:
     QList<Bulb*> m_rightBulbs;
 
     QString m_statusMessage;
+
+    // Pattern queue
+    QStringList m_patternQueue;
+    int m_currentQueueIndex = -1;
+    bool m_manualAdvance = false;
+    bool m_waitingForTrigger = false;
+    bool m_playingQueue = false;
 };

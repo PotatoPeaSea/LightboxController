@@ -104,6 +104,7 @@ private slots:
 
 private:
     QString configFilePath() const;
+    void repositionBulbsInGrid();
 
     QList<Bulb*> m_bulbs;
     BulbScanner* m_scanner = nullptr;

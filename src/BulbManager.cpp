@@ -6,6 +6,7 @@
 #include <QJsonArray>
 #include <QDebug>
 #include <QGuiApplication>
+#include <cmath>
 
 BulbManager::BulbManager(QObject* parent)
     : QAbstractListModel(parent)
@@ -192,10 +193,6 @@ void BulbManager::addBulb(const QString& ip, const QString& mac, const QString& 
     beginInsertRows(QModelIndex(), row, row);
 
     Bulb* bulb = new Bulb(ip, mac, model, this);
-    // Offset new bulbs so they don't stack
-    bulb->setPosX(row * 2.5f);
-    bulb->setPosY(0.0f);
-    bulb->setPosZ(0.0f);
 
     // Connect signals for model updates
     connect(bulb, &Bulb::colorChanged, this, &BulbManager::onBulbDataChanged);
@@ -207,6 +204,9 @@ void BulbManager::addBulb(const QString& ip, const QString& mac, const QString& 
 
     m_bulbs.append(bulb);
     endInsertRows();
+
+    // Reposition all bulbs in a centered square grid
+    repositionBulbsInGrid();
 
     emit countChanged();
     saveConfig();
@@ -484,5 +484,34 @@ void BulbManager::loadConfig()
     endResetModel();
     emit countChanged();
 
+    // One-time reposition of existing bulbs into a centered square grid
+    repositionBulbsInGrid();
+    saveConfig();
+
     qDebug() << "Loaded" << m_bulbs.size() << "bulbs from config";
+}
+
+// ─── Grid Positioning ─────────────────────────────────────
+
+void BulbManager::repositionBulbsInGrid()
+{
+    int n = m_bulbs.size();
+    if (n == 0) return;
+
+    int cols = static_cast<int>(std::ceil(std::sqrt(static_cast<double>(n))));
+    int rows = static_cast<int>(std::ceil(static_cast<double>(n) / cols));
+
+    float spacing = 2.5f;
+    float gridWidth  = (cols - 1) * spacing;
+    float gridDepth  = (rows - 1) * spacing;
+    float offsetX = -gridWidth / 2.0f;
+    float offsetZ = -gridDepth / 2.0f;
+
+    for (int i = 0; i < n; ++i) {
+        int col = i % cols;
+        int row = i / cols;
+        m_bulbs[i]->setPosX(offsetX + col * spacing);
+        m_bulbs[i]->setPosY(0.0f);
+        m_bulbs[i]->setPosZ(offsetZ + row * spacing);
+    }
 }

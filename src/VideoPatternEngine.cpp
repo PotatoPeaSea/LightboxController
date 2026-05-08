@@ -146,6 +146,10 @@ int VideoPatternEngine::playbackPositionMs() const
 QVariantList VideoPatternEngine::currentColors() const { return m_currentColors; }
 int VideoPatternEngine::targetBulbCount() const { return m_targetBulbs.size(); }
 QString VideoPatternEngine::statusMessage() const { return m_statusMessage; }
+QStringList VideoPatternEngine::patternQueue() const { return m_patternQueue; }
+bool VideoPatternEngine::isManualAdvance() const { return m_manualAdvance; }
+bool VideoPatternEngine::isWaitingForTrigger() const { return m_waitingForTrigger; }
+int VideoPatternEngine::currentQueueIndex() const { return m_currentQueueIndex; }
 
 // ═══════════════════════════════════════════════════════════
 //  Property setters
@@ -180,6 +184,14 @@ void VideoPatternEngine::setPlaybackSpeed(qreal speed)
         }
         m_playbackSpeed = speed;
         emit playbackSpeedChanged();
+    }
+}
+
+void VideoPatternEngine::setManualAdvance(bool manual)
+{
+    if (m_manualAdvance != manual) {
+        m_manualAdvance = manual;
+        emit manualAdvanceChanged();
     }
 }
 
@@ -455,10 +467,14 @@ void VideoPatternEngine::onPlaybackTick()
 
     // Handle looping / end
     if (elapsedMs >= duration) {
-        if (m_looping) {
+        if (m_looping && !m_playingQueue) {
             m_playbackOffsetMs = elapsedMs % duration;
             m_playbackClock.restart();
             elapsedMs = m_playbackOffsetMs;
+        } else if (m_playingQueue) {
+            // Pattern finished — try to advance queue
+            advanceQueue();
+            return;
         } else {
             stop();
             return;
@@ -757,5 +773,154 @@ void VideoPatternEngine::deletePattern(const QString& name)
             emit savedPatternsChanged();
             return;
         }
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Pattern Queue
+// ═══════════════════════════════════════════════════════════
+
+void VideoPatternEngine::enqueuePattern(const QString& name)
+{
+    m_patternQueue.append(name);
+    emit patternQueueChanged();
+    setStatus(QString("Queued: %1 (%2 in queue)").arg(name).arg(m_patternQueue.size()));
+}
+
+void VideoPatternEngine::removeFromQueue(int index)
+{
+    if (index < 0 || index >= m_patternQueue.size()) return;
+
+    m_patternQueue.removeAt(index);
+    emit patternQueueChanged();
+
+    // Adjust current index if needed
+    if (m_playingQueue && index < m_currentQueueIndex) {
+        m_currentQueueIndex--;
+        emit currentQueueIndexChanged();
+    } else if (m_playingQueue && index == m_currentQueueIndex) {
+        // Removed the currently playing pattern — stop queue
+        m_playingQueue = false;
+        m_currentQueueIndex = -1;
+        emit currentQueueIndexChanged();
+        stop();
+    }
+}
+
+void VideoPatternEngine::clearQueue()
+{
+    m_patternQueue.clear();
+    m_playingQueue = false;
+    m_currentQueueIndex = -1;
+    m_waitingForTrigger = false;
+    emit patternQueueChanged();
+    emit currentQueueIndexChanged();
+    emit waitingForTriggerChanged();
+    setStatus("Queue cleared");
+}
+
+void VideoPatternEngine::playQueue()
+{
+    if (m_patternQueue.isEmpty()) {
+        emit errorOccurred("Queue is empty");
+        return;
+    }
+
+    m_playingQueue = true;
+    m_currentQueueIndex = 0;
+    m_waitingForTrigger = false;
+    emit currentQueueIndexChanged();
+    emit waitingForTriggerChanged();
+
+    setStatus(QString("Playing queue: 1/%1 — %2")
+              .arg(m_patternQueue.size())
+              .arg(m_patternQueue[0]));
+    loadPattern(m_patternQueue[0]);
+}
+
+void VideoPatternEngine::triggerNext()
+{
+    if (!m_waitingForTrigger) return;
+
+    m_waitingForTrigger = false;
+    emit waitingForTriggerChanged();
+
+    m_currentQueueIndex++;
+    emit currentQueueIndexChanged();
+
+    if (m_currentQueueIndex < m_patternQueue.size()) {
+        setStatus(QString("Playing queue: %1/%2 — %3")
+                  .arg(m_currentQueueIndex + 1)
+                  .arg(m_patternQueue.size())
+                  .arg(m_patternQueue[m_currentQueueIndex]));
+        loadPattern(m_patternQueue[m_currentQueueIndex]);
+    } else {
+        // Queue finished
+        m_playingQueue = false;
+        m_currentQueueIndex = -1;
+        emit currentQueueIndexChanged();
+        stop();
+        setStatus("Queue finished");
+    }
+}
+
+void VideoPatternEngine::moveQueueItem(int from, int to)
+{
+    if (from < 0 || from >= m_patternQueue.size()) return;
+    if (to < 0 || to >= m_patternQueue.size()) return;
+    if (from == to) return;
+
+    m_patternQueue.move(from, to);
+    emit patternQueueChanged();
+
+    // Adjust current index if playing
+    if (m_playingQueue) {
+        if (m_currentQueueIndex == from) {
+            m_currentQueueIndex = to;
+        } else if (from < m_currentQueueIndex && to >= m_currentQueueIndex) {
+            m_currentQueueIndex--;
+        } else if (from > m_currentQueueIndex && to <= m_currentQueueIndex) {
+            m_currentQueueIndex++;
+        }
+        emit currentQueueIndexChanged();
+    }
+}
+
+void VideoPatternEngine::advanceQueue()
+{
+    // Stop current playback
+    m_playing = false;
+    m_paused = false;
+    m_playbackTimer->stop();
+    emit playStateChanged();
+
+    int nextIndex = m_currentQueueIndex + 1;
+
+    if (nextIndex >= m_patternQueue.size()) {
+        // Queue finished
+        m_playingQueue = false;
+        m_currentQueueIndex = -1;
+        emit currentQueueIndexChanged();
+        setStatus("Queue finished");
+        return;
+    }
+
+    if (m_manualAdvance) {
+        // Wait for the user to press triggerNext()
+        m_waitingForTrigger = true;
+        emit waitingForTriggerChanged();
+        setStatus(QString("Waiting for trigger... (next: %1/%2 — %3)")
+                  .arg(nextIndex + 1)
+                  .arg(m_patternQueue.size())
+                  .arg(m_patternQueue[nextIndex]));
+    } else {
+        // Auto-advance
+        m_currentQueueIndex = nextIndex;
+        emit currentQueueIndexChanged();
+        setStatus(QString("Playing queue: %1/%2 — %3")
+                  .arg(nextIndex + 1)
+                  .arg(m_patternQueue.size())
+                  .arg(m_patternQueue[nextIndex]));
+        loadPattern(m_patternQueue[nextIndex]);
     }
 }

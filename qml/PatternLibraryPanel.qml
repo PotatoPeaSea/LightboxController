@@ -108,7 +108,7 @@ Rectangle {
                     RowLayout {
                         anchors.fill: parent
                         anchors.margins: 8
-                        spacing: 8
+                        spacing: 6
 
                         Label {
                             text: "▶"
@@ -124,6 +124,28 @@ Rectangle {
                             Layout.fillWidth: true
                         }
 
+                        // Queue button
+                        Button {
+                            text: "➕"
+                            implicitWidth: 28
+                            implicitHeight: 28
+                            palette.button: "#0f3460"
+                            palette.buttonText: "#42a5f5"
+                            ToolTip.visible: queueBtnMa.containsMouse
+                            ToolTip.text: "Add to queue"
+                            onClicked: {
+                                patternEngine.enqueuePattern(modelData)
+                            }
+
+                            MouseArea {
+                                id: queueBtnMa
+                                anchors.fill: parent
+                                hoverEnabled: true
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: parent.clicked()
+                            }
+                        }
+
                         // Delete button
                         Button {
                             text: "✖"
@@ -137,6 +159,170 @@ Rectangle {
                         }
                     }
                 }
+            }
+
+            Rectangle { Layout.fillWidth: true; height: 1; color: "#0f3460" }
+
+            // ═══ Pattern Queue ═════════════════════════
+            Label { text: "QUEUE"; color: "#888"; font.pixelSize: 10; font.bold: true }
+
+            // Queue position indicator
+            Label {
+                visible: patternEngine.currentQueueIndex >= 0
+                text: "▶ Playing " + (patternEngine.currentQueueIndex + 1) + "/" + patternEngine.patternQueue.length
+                color: "#42a5f5"
+                font.pixelSize: 12
+                font.bold: true
+                Layout.fillWidth: true
+            }
+
+            // Empty queue state
+            Label {
+                visible: patternEngine.patternQueue.length === 0
+                text: "Queue is empty.\nUse ➕ to add patterns."
+                color: "#555"
+                font.pixelSize: 11
+                font.italic: true
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+
+            // Queue list
+            Repeater {
+                id: queueList
+                model: patternEngine.patternQueue
+
+                delegate: Rectangle {
+                    Layout.fillWidth: true
+                    height: 36
+                    radius: 4
+                    color: {
+                        if (index === patternEngine.currentQueueIndex)
+                            return "#2a3a5e"
+                        return queueItemMa.containsMouse ? "#222244" : "#1a1a38"
+                    }
+                    border.color: {
+                        if (index === patternEngine.currentQueueIndex)
+                            return "#42a5f5"
+                        return "#0f3460"
+                    }
+                    border.width: index === patternEngine.currentQueueIndex ? 2 : 1
+
+                    MouseArea {
+                        id: queueItemMa
+                        anchors.fill: parent
+                        hoverEnabled: true
+                    }
+
+                    RowLayout {
+                        anchors.fill: parent
+                        anchors.margins: 6
+                        spacing: 6
+
+                        Label {
+                            text: (index + 1) + "."
+                            color: index === patternEngine.currentQueueIndex ? "#42a5f5" : "#888"
+                            font.pixelSize: 11
+                            font.bold: index === patternEngine.currentQueueIndex
+                            Layout.preferredWidth: 22
+                        }
+
+                        Label {
+                            text: modelData
+                            color: index === patternEngine.currentQueueIndex ? "#e0e0e0" : "#bbb"
+                            font.pixelSize: 12
+                            elide: Text.ElideRight
+                            Layout.fillWidth: true
+                        }
+
+                        // Move up
+                        Button {
+                            text: "▲"
+                            visible: index > 0
+                            implicitWidth: 22
+                            implicitHeight: 22
+                            font.pixelSize: 9
+                            palette.button: "transparent"
+                            palette.buttonText: "#888"
+                            onClicked: patternEngine.moveQueueItem(index, index - 1)
+                        }
+
+                        // Move down
+                        Button {
+                            text: "▼"
+                            visible: index < patternEngine.patternQueue.length - 1
+                            implicitWidth: 22
+                            implicitHeight: 22
+                            font.pixelSize: 9
+                            palette.button: "transparent"
+                            palette.buttonText: "#888"
+                            onClicked: patternEngine.moveQueueItem(index, index + 1)
+                        }
+
+                        // Remove from queue
+                        Button {
+                            text: "✖"
+                            implicitWidth: 22
+                            implicitHeight: 22
+                            font.pixelSize: 9
+                            palette.button: "transparent"
+                            palette.buttonText: "#e94560"
+                            onClicked: patternEngine.removeFromQueue(index)
+                        }
+                    }
+                }
+            }
+
+            // Queue controls
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 6
+                visible: patternEngine.patternQueue.length > 0
+
+                Button {
+                    text: "▶ Play Queue"
+                    palette.button: "#1b5e20"
+                    palette.buttonText: "#e0e0e0"
+                    onClicked: patternEngine.playQueue()
+                }
+
+                Button {
+                    text: "🗑 Clear"
+                    palette.button: "#b71c1c"
+                    palette.buttonText: "#e0e0e0"
+                    onClicked: patternEngine.clearQueue()
+                }
+            }
+
+            // Manual advance toggle
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 8
+
+                Switch {
+                    id: manualAdvanceSwitch
+                    checked: patternEngine.manualAdvance
+                    onToggled: patternEngine.manualAdvance = checked
+                }
+
+                Label {
+                    text: "Manual Advance"
+                    color: manualAdvanceSwitch.checked ? "#e0e0e0" : "#888"
+                    font.pixelSize: 11
+                }
+            }
+
+            // Trigger next button (visible when waiting)
+            Button {
+                visible: patternEngine.waitingForTrigger
+                Layout.fillWidth: true
+                text: "⏭ NEXT"
+                font.pixelSize: 18
+                font.bold: true
+                implicitHeight: 48
+                palette.button: "#e94560"
+                palette.buttonText: "#ffffff"
+                onClicked: patternEngine.triggerNext()
             }
 
             Rectangle { Layout.fillWidth: true; height: 1; color: "#0f3460" }
